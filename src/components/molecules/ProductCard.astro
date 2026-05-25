@@ -1,0 +1,116 @@
+---
+import Button from '../atoms/Button.astro';
+
+interface Props {
+  title: string;
+  image: string;
+  subtitle?: string;
+  description?: string;
+  tag?: string;
+  specs?: string[];
+  enquireText?: string;
+  horizontal?: boolean;
+  class?: string;
+  ariaHidden?: boolean;
+}
+
+const {
+  title,
+  image,
+  subtitle,
+  description,
+  tag,
+  specs = [],
+  enquireText = "Enquire Now",
+  horizontal = false,
+  class: className = "",
+  ariaHidden = false,
+} = Astro.props;
+---
+
+{horizontal ? (
+  <div class={`product-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col md:flex-row hover:shadow-lg transition-all duration-300 ${className}`} aria-hidden={ariaHidden ? "true" : undefined}>
+    <div class="md:w-1/2 aspect-square bg-surface-container overflow-hidden">
+      <img loading="lazy" decoding="async" 
+        class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
+        src={image} 
+        alt={title} 
+      />
+    </div>
+    <div class="p-8 md:w-1/2 flex flex-col justify-center">
+      {tag && (
+        <span class="text-secondary text-xs uppercase font-bold tracking-wider mb-2 block font-label">
+          {tag}
+        </span>
+      )}
+      <h3 class="font-headline text-xl text-primary mb-4">
+        {title}
+      </h3>
+      {description && (
+        <p class="text-on-surface-variant text-sm font-body mb-6 leading-relaxed">
+          {description}
+        </p>
+      )}
+      <Button variant="secondary" class="w-fit px-8 py-3">
+        {enquireText}
+      </Button>
+    </div>
+  </div>
+) : (
+  <div class={`product-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col hover:shadow-lg transition-all duration-300 ${className}`} aria-hidden={ariaHidden ? "true" : undefined}>
+    <div class="aspect-square bg-surface-container overflow-hidden">
+      <img loading="lazy" decoding="async" 
+        class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
+        src={image} 
+        alt={title} 
+      />
+    </div>
+    <div class="p-6 flex-grow flex flex-col">
+      {tag && (
+        <span class="text-secondary text-xs uppercase font-bold tracking-wider mb-2 block font-label">
+          {tag}
+        </span>
+      )}
+      <h3 class="font-headline text-xl text-primary mb-3">
+        {title}
+      </h3>
+      {subtitle && (
+        <p class="text-label-md text-on-surface-variant mb-4">
+          {subtitle}
+        </p>
+      )}
+      {description && (
+        <p class="text-on-surface-variant text-sm font-body mb-6 leading-relaxed">
+          {description}
+        </p>
+      )}
+      
+      {specs.length > 0 && (
+        <div class="flex flex-wrap gap-2 mb-6 font-label mt-auto">
+          {specs.map(spec => (
+            <span class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full text-xs font-medium border border-outline-variant">
+              {spec}
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
+    
+    {enquireText && !subtitle && (
+      <div class="p-6 pt-0 mt-auto">
+        <Button variant="secondary" class="w-full py-3">
+          {enquireText}
+        </Button>
+      </div>
+    )}
+  </div>
+)}
+
+<style>
+  .product-card {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+  }
+  .product-card:hover {
+    transform: translateY(-8px);
+  }
+</style>

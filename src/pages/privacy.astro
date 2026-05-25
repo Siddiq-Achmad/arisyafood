@@ -1,0 +1,210 @@
+---
+import MainLayout from '../components/templates/MainLayout.astro';
+import Icon from '../components/atoms/Icon.astro';
+---
+
+<MainLayout 
+  title="Privacy Policy | PT ARISYAFOOD GLOBAL NIAGA" 
+  description="Learn about our privacy practices, how we handle your company and transactional data, and your rights under data protection laws."
+>
+  <main class="max-w-[1280px] mx-auto px-6 py-16 md:py-24">
+    <!-- Hero Header -->
+    <div class="max-w-3xl mb-16 reveal active">
+      <span class="text-secondary font-bold tracking-widest text-sm uppercase mb-4 block">Compliance &amp; Integrity</span>
+      <h1 class="text-4xl md:text-5xl font-bold text-primary leading-tight mb-6">Privacy Policy</h1>
+      <p class="text-lg text-on-surface-variant">
+        Last updated: October 24, 2023. This policy outlines our commitment to protecting the personal data of our global partners, customers, and website visitors.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <!-- Table of Contents -->
+      <aside class="lg:col-span-3 hidden lg:block sticky top-32 h-fit">
+        <nav class="space-y-4 border-l border-outline-variant pl-6" id="toc-nav">
+          <a class="block text-sm font-medium text-primary hover:text-secondary transition-colors" href="#data-collection">
+            1. Data Collection
+          </a>
+          <a class="block text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="#data-usage">
+            2. How We Use Data
+          </a>
+          <a class="block text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="#data-protection">
+            3. Data Protection
+          </a>
+          <a class="block text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="#cookies">
+            4. Cookie Policy
+          </a>
+          <a class="block text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="#international">
+            5. International Transfers
+          </a>
+          <a class="block text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="#rights">
+            6. Your Rights
+          </a>
+          <a class="block text-sm font-medium text-on-surface-variant hover:text-primary transition-colors" href="#contact">
+            7. Contact Information
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Content Area -->
+      <div class="lg:col-span-9 privacy-content">
+        <section id="introduction" class="scroll-mt-28">
+          <p>
+            PT ARISYAFOOD GLOBAL NIAGA ("we," "our," or "us") respects your privacy and is committed to protecting it through our compliance with this policy. This policy describes the types of information we may collect from you or that you may provide when you visit our website and our practices for collecting, using, maintaining, protecting, and disclosing that information.
+          </p>
+        </section>
+
+        <section id="data-collection" class="scroll-mt-28">
+          <h2>1. Information We Collect</h2>
+          <p>We collect several types of information from and about users of our website, including information by which you may be personally identified, such as:</p>
+          <ul>
+            <li>Identity Data: Name, company name, and job title.</li>
+            <li>Contact Data: Email address, telephone number, and physical business address.</li>
+            <li>Transaction Data: Details about products you have inquired about or purchased from us.</li>
+            <li>Technical Data: IP address, browser type and version, time zone setting, and location.</li>
+          </ul>
+        </section>
+
+        <section id="data-usage" class="scroll-mt-28">
+          <h2>2. How We Use Your Information</h2>
+          <p>We use information that we collect about you or that you provide to us to ensure our business operations remain efficient and professional:</p>
+          <ul>
+            <li>To provide you with information, products, or services that you request from us.</li>
+            <li>To fulfill our obligations and enforce our rights arising from any contracts entered into between you and us.</li>
+            <li>To notify you about changes to our website or any products or services we offer or provide.</li>
+            <li>To maintain the security and integrity of our supply chain and logistics operations.</li>
+          </ul>
+        </section>
+
+        <section id="data-protection" class="scroll-mt-28">
+          <div class="bg-primary-container p-8 rounded-xl my-12 border border-outline-variant/20">
+            <h2 class="!mt-0 text-white flex items-center gap-3">
+              <Icon name="security" class="text-secondary-fixed" fill={true} />
+              3. Data Protection Measures
+            </h2>
+            <p class="text-on-primary-container !mb-0">
+              We have implemented measures designed to secure your personal information from accidental loss and from unauthorized access, use, alteration, and disclosure. All information you provide to us is stored on our secure servers behind firewalls. We utilize industry-standard encryption for data at rest and in transit.
+            </p>
+          </div>
+        </section>
+
+        <section id="cookies" class="scroll-mt-28">
+          <h2>4. Cookie Policy</h2>
+          <p>
+            Our website uses cookies to distinguish you from other users. This helps us to provide you with a good experience when you browse our website and also allows us to improve our site. You can set your browser to refuse all or some browser cookies, or to alert you when websites set or access cookies.
+          </p>
+        </section>
+
+        <section id="international" class="scroll-mt-28">
+          <h2>5. International Data Transfers</h2>
+          <p>
+            As a global exporter based in Indonesia, information we collect may be transferred to, stored, and processed in various countries where we have business partners or service providers. By using our services, you consent to this transfer of information outside of your country of residence.
+          </p>
+        </section>
+
+        <section id="rights" class="scroll-mt-28">
+          <h2>6. Your Legal Rights</h2>
+          <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+          <ul>
+            <li>The right to access and receive a copy of your data.</li>
+            <li>The right to rectification of any inaccurate personal data.</li>
+            <li>The right to erasure ('right to be forgotten') in certain circumstances.</li>
+            <li>The right to object to processing for marketing purposes.</li>
+          </ul>
+        </section>
+
+        <section class="mt-16 pt-16 border-t border-outline-variant scroll-mt-28" id="contact">
+          <div class="flex flex-col md:flex-row gap-8 items-start">
+            <div class="flex-grow">
+              <h2 class="!mt-0">7. Contact Information</h2>
+              <p>To ask questions or comment about this privacy policy and our privacy practices, contact our Data Compliance Officer at:</p>
+              <div class="mt-6 space-y-2">
+                <p class="font-bold text-primary mb-0">PT ARISYAFOOD GLOBAL NIAGA</p>
+                <p class="text-sm">Compliance Department</p>
+                <p class="text-sm">Jakarta, Indonesia</p>
+                <a class="text-secondary font-bold hover:underline" href="mailto:privacy@arisyafood.com">
+                  privacy@arisyafood.com
+                </a>
+              </div>
+            </div>
+            
+            <div class="w-full md:w-[320px] bg-surface-container p-6 rounded-lg flex-shrink-0">
+              <h3 class="font-bold text-primary mb-4 flex items-center gap-2">
+                <Icon name="verified" class="text-secondary" />
+                Certifications
+              </h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Our data practices align with Indonesian PDP Law and global standards to ensure your business data is handled with the same care as our premium products.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</MainLayout>
+
+<style is:global>
+  .privacy-content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #012d1d;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .privacy-content p {
+    margin-bottom: 1.25rem;
+    color: #414844;
+    line-height: 1.7;
+  }
+
+  .privacy-content ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .privacy-content li {
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 1.5rem;
+    color: #414844;
+  }
+
+  .privacy-content li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #7a590d;
+    font-weight: bold;
+  }
+</style>
+
+<script>
+  // Dynamic scroll spy behavior for the table of contents
+  const initScrollSpy = () => {
+    const sections = document.querySelectorAll('.privacy-content section');
+    const navLinks = document.querySelectorAll('#toc-nav a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = (section as HTMLElement).offsetTop;
+        if (window.pageYOffset >= sectionTop - 160) {
+          current = section.getAttribute('id') || '';
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('text-primary');
+        link.classList.add('text-on-surface-variant');
+        if (link.getAttribute('href')?.includes(current)) {
+          link.classList.remove('text-on-surface-variant');
+          link.classList.add('text-primary');
+        }
+      });
+    });
+  };
+
+  initScrollSpy();
+</script>

@@ -1,0 +1,22 @@
+---
+interface Props {
+  variant?: 'primary-fixed' | 'outline' | 'accent';
+  class?: string;
+}
+
+const { variant = 'primary-fixed', class: className = '' } = Astro.props;
+
+const baseStyles = "inline-block py-1 px-3 text-label-md font-bold rounded mb-6 uppercase tracking-wider";
+
+const variants = {
+  'primary-fixed': "bg-primary-fixed text-on-primary-fixed",
+  'outline': "border border-outline-variant text-on-surface-variant",
+  'accent': "bg-secondary-container/20 text-secondary border border-secondary/20"
+};
+
+const classes = `${baseStyles} ${variants[variant]} ${className}`;
+---
+
+<span class={classes}>
+  <slot />
+</span>

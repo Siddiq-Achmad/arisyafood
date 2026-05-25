@@ -1,0 +1,54 @@
+---
+import Icon from '../atoms/Icon.astro';
+
+const certifications = [
+  { name: 'HALAL MUI', icon: 'verified_user' },
+  { name: 'BPOM Registered', icon: 'security' },
+  { name: 'Export License', icon: 'new_releases' },
+  { name: 'Quality', icon: 'approval_delegation' },
+  { name: 'Health Certificate', icon: 'factory' }
+];
+
+// Duplicate items for seamless infinite scroll
+const marqueeItems = [...certifications, ...certifications, ...certifications];
+---
+
+<section class="py-16 bg-surface border-y border-outline-variant w-full overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <div 
+      class="marquee-container opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500 reveal"
+      style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);"
+    >
+      <div class="marquee-track flex items-center gap-16 md:gap-32 w-max">
+        {marqueeItems.map(cert => (
+          <div class="flex items-center gap-3 text-headline-md font-bold text-primary shrink-0">
+            <Icon name={cert.icon} size="text-[32px]" class="text-primary" />
+            <span class="tracking-wider">{cert.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      /* Translating by 33.333% because we duplicated the array 3 times to ensure screen coverage */
+      transform: translateX(calc(-100% / 3));
+    }
+  }
+
+  .marquee-track {
+    animation: scroll 25s linear infinite;
+    /* Optional: Will-change to optimize animation performance */
+    will-change: transform;
+  }
+
+  .marquee-container:hover .marquee-track {
+    animation-play-state: paused;
+  }
+</style>

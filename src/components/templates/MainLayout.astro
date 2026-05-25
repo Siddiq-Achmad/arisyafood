@@ -1,0 +1,121 @@
+---
+import Navbar from "../organisms/Navbar.astro";
+import Footer from "../organisms/Footer.astro";
+import GlobalLoader from "../organisms/GlobalLoader.astro";
+import SEO from "../molecules/SEO.astro";
+import "../../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "PT ARISYAFOOD GLOBAL NIAGA | Premium Indonesian Exports",
+  description = "Establish a professional, high-fidelity digital presence to showcase Indonesian food heritage (crackers, spices, and vegetarian products) to an international market.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- SEO Component -->
+    <SEO title={title} description={description} />
+
+    <!-- Google Fonts Preload & Import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap"
+      as="style"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      as="style"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-background text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed font-body min-h-screen flex flex-col"
+  >
+    <!-- Global Loader -->
+    <GlobalLoader />
+
+    <!-- Navbar -->
+    <Navbar />
+
+    <!-- Main Content Slot -->
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <Footer />
+
+    <!-- Scroll & Parallax Animations Script -->
+    <script>
+      (() => {
+        // Reveal on scroll logic
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        }, observerOptions);
+
+        // Function to initialize observers
+        const initObservers = () => {
+          document
+            .querySelectorAll(".reveal")
+            .forEach((el) => observer.observe(el));
+        };
+
+        // Run on load
+        initObservers();
+
+        // Listen for Astro page loads if using view transitions in future
+        document.addEventListener("astro:page-load", initObservers);
+
+        // Parallax scrolling logic
+        window.addEventListener("scroll", () => {
+          const scrolled = window.pageYOffset;
+
+          // Hero parallax background
+          const heroBg = document.getElementById("hero-parallax");
+          if (heroBg) {
+            heroBg.style.transform = `translateY(${scrolled * 0.3}px)`;
+          }
+
+          // Global Reach section parallax background
+          const reachSection = document.getElementById("reach");
+          const reachBg = document.getElementById("reach-parallax");
+          if (reachSection && reachBg) {
+            const rect = reachSection.getBoundingClientRect();
+            const offset = window.innerHeight - rect.top;
+            if (offset > 0 && rect.bottom > 0) {
+              reachBg.style.transform = `translateY(${(offset - window.innerHeight) * 0.2}px)`;
+            }
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

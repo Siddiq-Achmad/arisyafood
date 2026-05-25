@@ -1,0 +1,137 @@
+---
+import Button from "../atoms/Button.astro";
+import Icon from "../atoms/Icon.astro";
+
+const pathname = Astro.url.pathname;
+const currentPath = pathname.replace(/\/$/, ""); // remove trailing slash
+
+const menuItems = [
+  { name: "Home", href: "/" },
+  { name: "About Us", href: "/about" },
+  { name: "Products", href: "/products" },
+  { name: "Gallery", href: "/gallery" },
+  { name: "Legality", href: "/legality" },
+  { name: "Contact", href: "/contact" },
+];
+
+const isActive = (href: string) => {
+  if (href === "/") {
+    return currentPath === ""
+      ? "text-primary font-bold border-b-2 border-primary"
+      : "text-on-surface-variant hover:text-primary";
+  }
+  return currentPath.includes(href)
+    ? "text-primary font-bold border-b-2 border-primary"
+    : "text-on-surface-variant hover:text-primary";
+};
+---
+
+<header
+  class="bg-surface sticky top-0 z-50 border-b border-outline-variant w-full"
+>
+  <nav
+    class="max-w-container-max mx-auto px-grid-gutter flex justify-between items-center h-20"
+  >
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-3">
+      <img
+        fetchpriority="high"
+        decoding="sync"
+        alt="Arisyafood Logo"
+        class="h-12 w-auto"
+        width="230"
+        height="153"
+        src="/logo.png"
+      />
+      <div class="flex flex-col leading-none">
+        <span class="text-xl font-display font-bold text-primary tracking-wide"
+          >ARISYA</span
+        >
+        <span
+          class="text-[10px] font-label text-secondary tracking-wide uppercase"
+          >Global Niaga</span
+        >
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <div class="hidden lg:flex items-center gap-8 font-label" role="navigation" aria-label="Main Navigation">
+      {
+        menuItems.map((item) => (
+          <a
+            href={item.href}
+            aria-current={isActive(item.href).includes("border-primary") ? "page" : undefined}
+            class={`text-label-md transition-colors duration-200 py-1 uppercase tracking-tight ${isActive(item.href)}`}
+          >
+            {item.name}
+          </a>
+        ))
+      }
+    </div>
+
+    <!-- Right Side CTA and Mobile Hamburger Button -->
+    <div class="flex items-center gap-4">
+      <Button href="/contact" variant="secondary" class="hidden md:block">
+        Get a Quote
+      </Button>
+      <button
+        class="lg:hidden text-primary focus:outline-none focus:ring-2 focus:ring-secondary rounded-md"
+        id="menu-toggle"
+        aria-label="Toggle Menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <Icon name="menu" size="text-[28px]" />
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Dropdown Navigation -->
+  <div
+    class="hidden lg:hidden w-full bg-surface border-b border-outline-variant px-grid-gutter py-4 transition-all duration-300"
+    id="mobile-menu"
+    role="navigation"
+    aria-label="Mobile Navigation"
+  >
+    <div class="flex flex-col gap-4 font-label">
+      {
+        menuItems.map((item) => (
+          <a
+            href={item.href}
+            aria-current={isActive(item.href).includes("border-primary") ? "page" : undefined}
+            class={`text-label-md transition-colors duration-200 py-2 border-b border-outline-variant/30 uppercase ${isActive(item.href)}`}
+          >
+            {item.name}
+          </a>
+        ))
+      }
+      <Button
+        href="/contact"
+        variant="secondary"
+        class="w-full text-center py-3 mt-2"
+      >
+        Get a Quote
+      </Button>
+    </div>
+  </div>
+</header>
+
+<script>
+  (() => {
+    const toggleBtn = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    if (toggleBtn && mobileMenu) {
+      toggleBtn.addEventListener("click", () => {
+        const isHidden = mobileMenu.classList.contains("hidden");
+        if (isHidden) {
+          mobileMenu.classList.remove("hidden");
+          toggleBtn.setAttribute("aria-expanded", "true");
+        } else {
+          mobileMenu.classList.add("hidden");
+          toggleBtn.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+  })();
+</script>

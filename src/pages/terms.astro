@@ -1,0 +1,238 @@
+---
+import MainLayout from '../components/templates/MainLayout.astro';
+import Icon from '../components/atoms/Icon.astro';
+---
+
+<MainLayout 
+  title="Terms &amp; Conditions | PT ARISYAFOOD GLOBAL NIAGA" 
+  description="Please read these terms carefully before using our export services or website. PT ARISYAFOOD GLOBAL NIAGA."
+>
+  <main class="max-w-[1280px] mx-auto px-6 py-16 md:py-24">
+    <!-- Hero Header -->
+    <header class="mb-16 border-l-4 border-secondary pl-8 reveal active">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-primary mb-4 leading-tight">Terms &amp; Conditions</h1>
+      <p class="text-on-surface-variant text-lg max-w-2xl">
+        Last updated: October 24, 2024. Please read these terms carefully before using our export services or website.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
+      <!-- Table of Contents Sidebar -->
+      <aside class="lg:col-span-3">
+        <div class="sticky top-32 space-y-4">
+          <h3 class="font-bold text-primary uppercase tracking-widest text-xs mb-6">Contents</h3>
+          <nav class="flex flex-col space-y-3" id="toc-nav">
+            <a class="text-sm font-medium text-on-surface-variant hover:text-secondary transition-colors border-l-2 border-transparent pl-4 hover:border-secondary" href="#acceptance">
+              Acceptance of Terms
+            </a>
+            <a class="text-sm font-medium text-on-surface-variant hover:text-secondary transition-colors border-l-2 border-transparent pl-4 hover:border-secondary" href="#website-use">
+              Website Use
+            </a>
+            <a class="text-sm font-medium text-on-surface-variant hover:text-secondary transition-colors border-l-2 border-transparent pl-4 hover:border-secondary" href="#export-terms">
+              Export &amp; Trade Terms
+            </a>
+            <a class="text-sm font-medium text-on-surface-variant hover:text-secondary transition-colors border-l-2 border-transparent pl-4 hover:border-secondary" href="#intellectual-property">
+              Intellectual Property
+            </a>
+            <a class="text-sm font-medium text-on-surface-variant hover:text-secondary transition-colors border-l-2 border-transparent pl-4 hover:border-secondary" href="#liability">
+              Limitation of Liability
+            </a>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Main Legal Content -->
+      <article class="lg:col-span-9 space-y-16">
+        <!-- Section 1 -->
+        <section class="prose-section scroll-mt-28" id="acceptance">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="bg-primary-container text-on-primary-container w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold">01</span>
+            <h2 class="text-2xl font-bold text-primary">Acceptance of Terms</h2>
+          </div>
+          <div class="text-on-surface-variant leading-relaxed space-y-4">
+            <p>
+              By accessing and using the services of <strong>PT ARISYAFOOD GLOBAL NIAGA</strong>, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. These terms govern all interactions between our company and our global trading partners, distributors, and website visitors.
+            </p>
+            <p>
+              We reserve the right to modify these terms at any time. Your continued use of the website or engagement in trade following any changes constitutes your acceptance of the revised terms.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="prose-section scroll-mt-28" id="website-use">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="bg-primary-container text-on-primary-container w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold">02</span>
+            <h2 class="text-2xl font-bold text-primary">Use of Website</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div class="p-6 bg-surface-container-low rounded-xl border border-outline-variant">
+              <Icon name="verified_user" class="text-secondary mb-3" />
+              <h4 class="font-bold mb-2 text-primary">Permitted Use</h4>
+              <p class="text-sm text-on-surface-variant">
+                The content is for professional inquiry and B2B engagement. Users may download brochures and certificates for legitimate procurement evaluation.
+              </p>
+            </div>
+            <div class="p-6 bg-surface-container-low rounded-xl border border-outline-variant">
+              <Icon name="block" class="text-error mb-3" />
+              <h4 class="font-bold mb-2 text-primary">Prohibited Conduct</h4>
+              <p class="text-sm text-on-surface-variant">
+                Unauthorized data mining, scraping, or interference with the website's technical infrastructure is strictly prohibited and subject to legal action.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3: Export Focus -->
+        <section class="prose-section scroll-mt-28" id="export-terms">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="bg-primary-container text-on-primary-container w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold">03</span>
+            <h2 class="text-2xl font-bold text-primary">Export &amp; Trade Terms</h2>
+          </div>
+          <div class="bg-primary text-on-primary p-8 rounded-2xl mb-8 relative overflow-hidden">
+            <div class="relative z-10">
+              <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                <Icon name="language" class="text-secondary-fixed" />
+                International Standards
+              </h3>
+              <ul class="space-y-4 text-sm opacity-90">
+                <li class="flex gap-3">
+                  <span class="text-secondary-fixed font-bold">INCOTERMS:</span>
+                  Unless otherwise specified in a formal Proforma Invoice, all international trades are governed by Incoterms® 2020.
+                </li>
+                <li class="flex gap-3">
+                  <span class="text-secondary-fixed font-bold">PAYMENT:</span>
+                  Standard terms involve Letter of Credit (L/C) at sight or T/T (Telegraphic Transfer) as specified in individual contracts.
+                </li>
+                <li class="flex gap-3">
+                  <span class="text-secondary-fixed font-bold">CERTIFICATION:</span>
+                  All food exports comply with Indonesian BPOM and HALAL MUI standards; specific destination country requirements must be declared by the buyer.
+                </li>
+              </ul>
+            </div>
+            <div class="absolute -right-16 -bottom-16 opacity-10">
+              <Icon name="sailing" size="text-[200px]" fill={true} />
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="prose-section scroll-mt-28" id="intellectual-property">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="bg-primary-container text-on-primary-container w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold">04</span>
+            <h2 class="text-2xl font-bold text-primary">Intellectual Property</h2>
+          </div>
+          <div class="text-on-surface-variant leading-relaxed space-y-6">
+            <p>
+              All content on this website, including but not limited to the PT ARISYAFOOD GLOBAL NIAGA brand name, logos, product photography, technical specifications, and trade secrets, are the exclusive property of the company.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="border-t border-outline-variant pt-4">
+                <h5 class="font-bold text-primary mb-1">Trademarks</h5>
+                <p class="text-xs">Proprietary brand marks and visual identity.</p>
+              </div>
+              <div class="border-t border-outline-variant pt-4">
+                <h5 class="font-bold text-primary mb-1">Copywriting</h5>
+                <p class="text-xs">Product descriptions and technical content.</p>
+              </div>
+              <div class="border-t border-outline-variant pt-4">
+                <h5 class="font-bold text-primary mb-1">Photography</h5>
+                <p class="text-xs">Original high-resolution facility and product images.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section class="prose-section scroll-mt-28" id="liability">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="bg-primary-container text-on-primary-container w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold">05</span>
+            <h2 class="text-2xl font-bold text-primary">Limitation of Liability</h2>
+          </div>
+          <p class="text-on-surface-variant mb-6 font-body">
+            While we strive for 100% accuracy in our food supply and documentation, PT ARISYAFOOD GLOBAL NIAGA shall not be liable for:
+          </p>
+          <ul class="space-y-4 mb-6">
+            <li class="flex items-start gap-3 text-sm text-on-surface-variant font-body">
+              <Icon name="check_circle" class="text-secondary" />
+              Delays caused by maritime logistics, customs clearance, or force majeure events.
+            </li>
+            <li class="flex items-start gap-3 text-sm text-on-surface-variant font-body">
+              <Icon name="check_circle" class="text-secondary" />
+              Indirect or consequential damages resulting from the use of our website information.
+            </li>
+            <li class="flex items-start gap-3 text-sm text-on-surface-variant font-body">
+              <Icon name="check_circle" class="text-secondary" />
+              Product shelf-life issues arising from improper storage conditions after delivery.
+            </li>
+          </ul>
+        </section>
+      </article>
+    </div>
+
+    <!-- Final Section: Governing Law Card (Moved outside the grid to be full width) -->
+    <section class="bg-surface-container-highest p-8 md:p-12 rounded-3xl border border-outline-variant prose-section scroll-mt-28" id="governing-law">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <span class="bg-primary-container text-on-primary-container w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold">06</span>
+            <h2 class="text-3xl font-bold text-primary">Governing Law</h2>
+          </div>
+          <p class="text-on-surface-variant max-w-xl font-body">
+            These terms and any separate agreements whereby we provide you Services shall be governed by and construed in accordance with the laws of the **Republic of Indonesia**. Any disputes shall be subject to the exclusive jurisdiction of the courts in Jakarta.
+          </p>
+        </div>
+        <div class="shrink-0">
+          <img loading="lazy" decoding="async" 
+            alt="A professional shot of the Indonesian flag in Jakarta" 
+            class="w-40 h-40 rounded-2xl object-cover shadow-lg border-4 border-white"
+            src="/images/asset_26.jpg" 
+          />
+        </div>
+      </div>
+    </section>
+  </main>
+</MainLayout>
+
+<script>
+  // Smooth scroll implementation for table of contents
+  const initSmoothScroll = () => {
+    document.querySelectorAll('#toc-nav a').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = anchor.getAttribute('href')?.substring(1) || '';
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 100,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  };
+
+  // Highlight active section on scroll
+  const initActiveHighlight = () => {
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const sections = document.querySelectorAll('.prose-section');
+      sections.forEach(section => {
+        const sectionTop = (section as HTMLElement).offsetTop;
+        if (window.pageYOffset >= sectionTop - 150) {
+          current = section.getAttribute('id') || '';
+        }
+      });
+
+      document.querySelectorAll('#toc-nav a').forEach(a => {
+        a.classList.remove('text-secondary', 'border-secondary');
+        if (a.getAttribute('href')?.substring(1) === current) {
+          a.classList.add('text-secondary', 'border-secondary');
+        }
+      });
+    });
+  };
+
+  initSmoothScroll();
+  initActiveHighlight();
+</script>

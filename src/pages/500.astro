@@ -1,0 +1,32 @@
+---
+import MainLayout from '../components/templates/MainLayout.astro';
+import Button from '../components/atoms/Button.astro';
+---
+
+<MainLayout 
+  title="Server Error | PT ARISYAFOOD GLOBAL NIAGA"
+  description="We are experiencing some technical difficulties."
+>
+  <section class="min-h-[70vh] flex flex-col items-center justify-center text-center px-grid-gutter py-section-gap-desktop bg-error-container relative overflow-hidden">
+    <div class="relative z-10 max-w-2xl reveal">
+      <div class="inline-flex items-center justify-center w-24 h-24 bg-error text-on-error rounded-full mb-8 shadow-lg">
+        <span class="material-symbols-outlined text-[48px]">warning</span>
+      </div>
+      <h1 class="text-display-lg font-display font-bold text-error mb-4">
+        500 - Server Error
+      </h1>
+      <p class="text-body-lg text-on-error-container mb-12 leading-relaxed max-w-xl mx-auto">
+        We are experiencing an internal server issue. Our engineering team has been notified and is working to resolve the problem. Please try again later.
+      </p>
+      
+      <div class="flex flex-wrap items-center justify-center gap-6">
+        <Button href="/" variant="primary" class="px-8 py-4">
+          Return to Homepage
+        </Button>
+        <Button href="mailto:support@arisyaglobal.com" variant="secondary" class="px-8 py-4">
+          Contact Support
+        </Button>
+      </div>
+    </div>
+  </section>
+</MainLayout>

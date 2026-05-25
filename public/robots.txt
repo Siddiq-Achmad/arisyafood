@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://arisyaglobal.com/sitemap-index.xml

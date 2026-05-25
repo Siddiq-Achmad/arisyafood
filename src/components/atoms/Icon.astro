@@ -1,0 +1,16 @@
+---
+interface Props {
+  name: string;
+  class?: string;
+  fill?: boolean;
+  size?: string; // e.g., "text-[18px]", "text-[24px]"
+}
+
+const { name, class: className = '', fill = false, size = '' } = Astro.props;
+
+const classes = `material-symbols-outlined ${size} ${className}`;
+---
+
+<span class={classes} data-weight={fill ? "fill" : undefined}>
+  {name}
+</span>

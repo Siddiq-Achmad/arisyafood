@@ -1,0 +1,182 @@
+---
+import Icon from "../atoms/Icon.astro";
+
+const quickLinks = [
+  { name: "About Our Factory", href: "/about#factory" },
+  { name: "Manufacturing Process", href: "/about#process" },
+  { name: "Certifications", href: "/legality" },
+  { name: "Export Procedures", href: "/contact#export" },
+];
+
+const productLinks = [
+  { name: "Raw Crackers", href: "/products#crackers" },
+  { name: "Vegetarian Food", href: "/products#vegetarian" },
+  { name: "Indonesian Spices", href: "/products#spices" },
+  { name: "Global Markets", href: "/#reach" },
+];
+---
+
+<footer class="bg-primary text-on-primary py-section-gap-desktop w-full">
+  <div
+    class="max-w-container-max mx-auto px-grid-gutter grid grid-cols-1 md:grid-cols-4 gap-grid-gutter"
+  >
+    <!-- Company Overview -->
+    <div class="col-span-1 md:col-span-1">
+      <div class="flex items-center gap-3 mb-8">
+        <img
+          fetchpriority="high"
+          decoding="sync"
+          alt="Arisyafood Logo"
+          class="h-16 w-auto brightness-0 invert"
+          width="230"
+          height="153"
+          src="/logo.png"
+        />
+        <div class="flex flex-col leading-none">
+          <span
+            class="text-2xl font-display font-bold text-white tracking-widest"
+            >ARISYA</span
+          >
+          <span
+            class="text-xs font-label text-secondary tracking-widest uppercase"
+            >Global Niaga</span
+          >
+        </div>
+      </div>
+      <p class="text-body-md opacity-70 mb-8 leading-relaxed">
+        Your trusted export partner for premium Indonesian food products.
+        Delivering excellence from local sources to global markets.
+      </p>
+      <div class="flex gap-4">
+        <a
+          class="w-10 h-10 rounded bg-white/10 flex items-center justify-center hover:bg-secondary transition-all"
+          href="mailto:sales@arisyaglobal.com"
+          aria-label="Email Us"
+        >
+          <Icon name="mail" size="text-[20px]" />
+        </a>
+        <a
+          class="w-10 h-10 rounded bg-white/10 flex items-center justify-center hover:bg-secondary transition-all"
+          href="tel:+6285121310331"
+          aria-label="Call Us"
+        >
+          <Icon name="phone" size="text-[20px]" />
+        </a>
+        <a
+          class="w-10 h-10 rounded bg-white/10 flex items-center justify-center hover:bg-secondary transition-all"
+          href="https://wa.me/6285121310331"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp"
+        >
+          <Icon name="chat" size="text-[20px]" />
+        </a>
+        <a
+          class="w-10 h-10 rounded bg-white/10 flex items-center justify-center hover:bg-secondary transition-all"
+          href="https://linkedin.com/company/arisyafood"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn Profile"
+        >
+          <Icon name="public" size="text-[20px]" />
+        </a>
+        <a
+          class="w-10 h-10 rounded bg-white/10 flex items-center justify-center hover:bg-secondary transition-all"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Alibaba Store"
+        >
+          <Icon name="storefront" size="text-[20px]" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h4 class="text-headline-md font-bold mb-8 text-secondary-fixed">
+        Quick Links
+      </h4>
+      <ul class="space-y-4 text-body-md">
+        {
+          quickLinks.map((link) => (
+            <li>
+              <a
+                class="opacity-80 hover:opacity-100 hover:translate-x-1 inline-block transition-all"
+                href={link.href}
+              >
+                {link.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <!-- Products -->
+    <div>
+      <h4 class="text-headline-md font-bold mb-8 text-secondary-fixed">
+        Products
+      </h4>
+      <ul class="space-y-4 text-body-md">
+        {
+          productLinks.map((link) => (
+            <li>
+              <a
+                class="opacity-80 hover:opacity-100 hover:translate-x-1 inline-block transition-all"
+                href={link.href}
+              >
+                {link.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div>
+      <h4 class="text-headline-md font-bold mb-8 text-secondary-fixed">
+        Contact Info
+      </h4>
+      <ul class="space-y-4 text-body-md opacity-80">
+        <li class="flex gap-3 items-start">
+          <Icon
+            name="location_on"
+            class="text-secondary mt-0.5"
+            size="text-[20px]"
+          />
+          <span>Jl. Letda Sujono No. 88, Medan, Sumatera Utara, Indonesia</span>
+        </li>
+        <li class="flex gap-3 items-center">
+          <Icon name="call" class="text-secondary" size="text-[20px]" />
+          <span> (+62) 851 2131 0331</span>
+        </li>
+        <li class="flex gap-3 items-center">
+          <Icon name="mail" class="text-secondary" size="text-[20px]" />
+          <span>sales@arisyaglobal.com</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div
+    class="max-w-container-max mx-auto px-grid-gutter border-t border-white/10 mt-20 pt-10 flex flex-col md:flex-row justify-between items-center gap-4"
+  >
+    <p class="text-label-md opacity-50">
+      © {new Date().getFullYear()} PT ARISYAFOOD GLOBAL NIAGA. All Rights Reserved.
+    </p>
+    <div class="flex gap-8 text-label-md opacity-50">
+      <a class="hover:opacity-100 transition-opacity" href="/privacy"
+        >Privacy Policy</a
+      >
+      <a class="hover:opacity-100 transition-opacity" href="/terms"
+        >Terms & Conditions</a
+      >
+      <a class="hover:opacity-100 transition-opacity" href="/cookies"
+        >Cookie Policy</a
+      >
+    </div>
+  </div>
+</footer>

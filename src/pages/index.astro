@@ -1,0 +1,272 @@
+---
+import MainLayout from "../components/templates/MainLayout.astro";
+import Button from "../components/atoms/Button.astro";
+import Badge from "../components/atoms/Badge.astro";
+import Icon from "../components/atoms/Icon.astro";
+import ProductCarousel from "../components/organisms/ProductCarousel.astro";
+import ReachMap from "../components/organisms/ReachMap.astro";
+import CertificationBar from "../components/organisms/CertificationBar.astro";
+
+// B2B Featured categories on homepage
+const categories = [
+  {
+    title: "Indonesian Spices",
+    description:
+      "Premium quality white pepper, cinnamon, cloves, and more, sourced directly from best plantations.",
+    image:
+      "/images/asset_3.jpg",
+    href: "/products#spices",
+  },
+  {
+    title: "Raw Crackers",
+    description:
+      "Authentic Indonesian crackers with various flavors including Prawn, Fish, and Cassava, ready for export.",
+    image:
+      "/images/asset_2.jpg",
+    href: "/products#crackers",
+  },
+  {
+    title: "Vegetarian Food",
+    description:
+      "Healthy plant-based snacks and ingredients made from natural Indonesian sources with modern process.",
+    image:
+      "/images/asset_4.jpg",
+    href: "/products#vegetarian",
+  },
+];
+---
+
+<MainLayout>
+  <!-- Grand Hero Section -->
+  <section
+    class="relative min-h-screen flex flex-col justify-center overflow-hidden parallax-wrapper w-full"
+  >
+    <!-- Parallax Hero Background -->
+    <div class="parallax-bg bg-mesh" id="hero-parallax"></div>
+
+    <div
+      class="max-w-container-max mx-auto px-grid-gutter pt-section-gap-mobile lg:pt-0 relative z-10 w-full"
+    >
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Left Hero Column -->
+        <div class="reveal active">
+          <Badge variant="primary-fixed">Established in Indonesia</Badge>
+
+          <h1
+            class="font-display text-display-lg text-primary mb-6 leading-tight"
+          >
+            Your Trusted <span class="text-secondary">Export Partner</span> from Indonesia
+          </h1>
+
+          <p class="text-body-lg text-on-surface-variant mb-10 max-w-xl">
+            PT ARISYAFOOD GLOBAL NIAGA delivers premium Spices, Raw Crackers,
+            and Vegetarian Food with consistent quality, competitive pricing,
+            and professional logistics to the global market.
+          </p>
+
+          <div class="flex flex-wrap gap-4">
+            <Button href="/products" variant="primary" class="gap-2">
+              Explore Products
+              <Icon name="arrow_forward" size="text-[18px]" />
+            </Button>
+            <Button href="/contact" variant="outline"> Contact Us </Button>
+          </div>
+
+          <!-- Trust Stats Row -->
+          <div
+            class="mt-12 flex gap-8 items-center border-t border-outline-variant pt-8"
+          >
+            <div>
+              <p class="text-headline-md font-bold text-primary">30+</p>
+              <p class="text-label-md text-on-surface-variant">Countries</p>
+            </div>
+            <div class="w-px h-10 bg-outline-variant"></div>
+            <div>
+              <p class="text-headline-md font-bold text-primary">100%</p>
+              <p class="text-label-md text-on-surface-variant">
+                Quality Control
+              </p>
+            </div>
+            <div class="w-px h-10 bg-outline-variant"></div>
+            <div>
+              <p class="text-headline-md font-bold text-primary">Trusted</p>
+              <p class="text-label-md text-on-surface-variant">Certified</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Column -->
+        <div class="relative reveal active delay-200">
+          <div
+            class="aspect-square rounded-full bg-secondary-container/20 absolute -z-10 blur-3xl -right-20 -top-20 w-[120%]"
+          >
+          </div>
+
+          <img fetchpriority="high" decoding="sync"
+            class="w-full h-auto object-cover rounded-xl shadow-2xl"
+            alt="A premium, high-resolution lifestyle photograph showcasing a variety of traditional Indonesian spices and raw crackers arranged elegantly on a clean white surface."
+            src="/images/asset_5.jpg"
+          />
+
+          <!-- Floating Safe Food Certification Badge -->
+          <div
+            class="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-xl hidden md:block border border-outline-variant"
+          >
+            <div class="flex items-center gap-4">
+              <Icon
+                name="verified"
+                class="text-secondary text-[40px]"
+                fill={true}
+              />
+              <div>
+                <p class="text-headline-md font-bold text-primary">
+                  Export Lic.
+                </p>
+                <p class="text-label-md text-on-surface-variant">
+                  Official Permit
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Best Selling Products Carousel Organism -->
+      <ProductCarousel />
+    </div>
+  </section>
+
+  <!-- About Us Teaser -->
+  <section
+    class="py-section-gap-desktop bg-surface-container-lowest relative overflow-hidden"
+    id="about"
+  >
+    <div class="max-w-container-max mx-auto px-grid-gutter relative z-10">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-12 gap-grid-gutter items-center"
+      >
+        <!-- Left Image Grid -->
+        <div class="lg:col-span-5 reveal">
+          <img loading="lazy" decoding="async"
+            class="w-full h-[500px] object-cover rounded-lg shadow-lg"
+            alt="A wide panoramic shot of a vast, emerald-green Indonesian spice plantation."
+            src="/images/asset_15.jpg"
+          />
+        </div>
+
+        <!-- Right Info Column -->
+        <div class="lg:col-span-7">
+          <div class="pl-0 lg:pl-12">
+            <h2 class="text-headline-lg font-bold text-primary mb-6 reveal">
+              Bridging the Best of Indonesia to the World
+            </h2>
+            <p
+              class="text-body-lg text-on-surface-variant mb-8 reveal delay-100"
+            >
+              PT ARISYAFOOD GLOBAL NIAGA is an export trading company based in
+              Medan, Indonesia. We operate in the spices, crackers, and snacks
+              industry with high-quality and competitive prices for global
+              markets.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal delay-200">
+              <!-- Mission bullet -->
+              <div class="flex items-start gap-4">
+                <Icon name="handshake" class="text-secondary mt-1" />
+                <div>
+                  <h4 class="text-headline-md font-bold text-primary mb-2">
+                    Our Mission
+                  </h4>
+                  <p
+                    class="text-body-md text-on-surface-variant leading-relaxed"
+                  >
+                    To be the most reliable and sustainable export partner by
+                    prioritizing quality and customer satisfaction.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Sustainability bullet -->
+              <div class="flex items-start gap-4">
+                <Icon name="eco" class="text-secondary mt-1" />
+                <div>
+                  <h4 class="text-headline-md font-bold text-primary mb-2">
+                    Sustainability
+                  </h4>
+                  <p
+                    class="text-body-md text-on-surface-variant leading-relaxed"
+                  >
+                    Working closely with selected manufacturers and local
+                    farmers to ensure ethical and safe food supply.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Categories Grid -->
+  <section class="py-section-gap-desktop bg-surface" id="products">
+    <div class="max-w-container-max mx-auto px-grid-gutter text-center mb-16">
+      <span
+        class="text-secondary text-label-md font-bold tracking-widest uppercase reveal"
+        >Our Core Portfolio</span
+      >
+      <h2
+        class="font-display text-display-lg text-primary mt-2 reveal delay-100"
+      >
+        Export Product Categories
+      </h2>
+      <div class="w-24 h-1 bg-secondary mx-auto mt-6 reveal delay-200"></div>
+    </div>
+
+    <div
+      class="max-w-container-max mx-auto px-grid-gutter grid grid-cols-1 md:grid-cols-3 gap-8"
+    >
+      {
+        categories.map((cat, index) => (
+          <div
+            class="group reveal"
+            style={`transition-delay: ${index * 100}ms;`}
+          >
+            <div class="relative overflow-hidden rounded-xl bg-white border border-outline-variant hover:border-secondary hover:shadow-lg transition-all h-full flex flex-col">
+              <div class="aspect-[4/3] overflow-hidden">
+                <img loading="lazy" decoding="async"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  src={cat.image}
+                  alt={cat.title}
+                />
+              </div>
+              <div class="p-8 flex-grow flex flex-col justify-between">
+                <div>
+                  <h3 class="text-headline-lg font-bold text-primary mb-4">
+                    {cat.title}
+                  </h3>
+                  <p class="text-body-md text-on-surface-variant mb-6 leading-relaxed">
+                    {cat.description}
+                  </p>
+                </div>
+                <a
+                  class="inline-flex items-center gap-2 text-secondary font-bold hover:gap-4 transition-all"
+                  href={cat.href}
+                >
+                  VIEW DETAILS
+                  <Icon name="arrow_right_alt" />
+                </a>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Global Export Reach Organism -->
+  <ReachMap />
+
+  <!-- Trust & Certification Banner Organism -->
+  <CertificationBar />
+</MainLayout>

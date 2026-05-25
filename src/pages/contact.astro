@@ -1,0 +1,398 @@
+---
+import MainLayout from '../components/templates/MainLayout.astro';
+import Icon from '../components/atoms/Icon.astro';
+---
+
+<MainLayout 
+  title="Contact Us | PT ARISYAFOOD GLOBAL NIAGA" 
+  description="Contact PT ARISYAFOOD GLOBAL NIAGA today. Get wholesales quotes, request product catalogs, or discuss distribution partnerships."
+>
+  <!-- Hero Section -->
+  <section class="relative bg-primary-container py-24 md:py-32 overflow-hidden w-full">
+    <div class="absolute inset-0 opacity-15">
+      <img fetchpriority="high" decoding="sync" 
+        class="w-full h-full object-cover transition-transform duration-700 ease-out scale-105"
+        alt="Logistics terminal at sunset" 
+        id="heroImg"
+        src="/images/asset_12.jpg" 
+      />
+    </div>
+    <div class="max-w-container-max mx-auto px-grid-gutter relative z-10 fade-in w-full">
+      <div class="max-w-3xl">
+        <h1 class="font-display text-5xl md:text-6xl text-white mb-6 leading-tight">
+          Global Partnerships, <br /><span class="text-secondary-fixed">Authentic Indonesian Quality.</span>
+        </h1>
+        <p class="font-body text-lg md:text-xl text-on-primary-container mb-8">
+          Whether you are an international wholesaler or a retail chain, we are ready to discuss how our premium food products can reach your market. Reach out to our team today.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Form Section -->
+  <section class="py-section-gap-desktop w-full">
+    <div class="max-w-container-max mx-auto px-grid-gutter">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+        <!-- Left: Contact Information & Export Info -->
+        <div class="lg:col-span-5 space-y-12">
+          <div>
+            <h2 class="font-headline text-3xl text-primary mb-8 reveal-text" id="revealHeader">
+              Corporate Headquarters
+            </h2>
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <Icon name="location_on" class="text-secondary flex-shrink-0" />
+                <div>
+                  <p class="font-bold text-on-surface mb-1">Jakarta Office</p>
+                  <p class="text-on-surface-variant">
+                    Kawasan Industri Pulogadung, Jln. Raya Bekasi KM 21, Jakarta Timur, Indonesia 13920
+                  </p>
+                </div>
+              </div>
+              
+              <div class="flex gap-4">
+                <Icon name="call" class="text-secondary flex-shrink-0" />
+                <div>
+                  <p class="font-bold text-on-surface mb-1">Phone &amp; Fax</p>
+                  <p class="text-on-surface-variant">+62 21 460 1234 (HQ)</p>
+                  <p class="text-on-surface-variant">+62 21 460 5678 (Fax)</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <Icon name="chat" class="text-secondary flex-shrink-0" fill={true} />
+                <div>
+                  <p class="font-bold text-on-surface mb-1">WhatsApp Export Inquiry</p>
+                  <a class="text-primary font-semibold hover:underline" href="https://wa.me/6285121310331">
+                    +62 851 2131 0331 (Mr. Arif - Export Manager)
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Export Destinations -->
+          <div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant">
+            <h3 class="font-headline text-2xl text-primary mb-6">Our Export Network</h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="bg-white border border-outline-variant px-4 py-2 rounded-full font-label text-sm flex items-center gap-2">
+                <Icon name="public" size="text-sm" class="text-secondary" />
+                Malaysia
+              </span>
+              <span class="bg-white border border-outline-variant px-4 py-2 rounded-full font-label text-sm flex items-center gap-2">
+                <Icon name="public" size="text-sm" class="text-secondary" />
+                Singapore
+              </span>
+              <span class="bg-white border border-outline-variant px-4 py-2 rounded-full font-label text-sm flex items-center gap-2">
+                <Icon name="public" size="text-sm" class="text-secondary" />
+                Japan
+              </span>
+              <span class="bg-white border border-outline-variant px-4 py-2 rounded-full font-label text-sm flex items-center gap-2">
+                <Icon name="public" size="text-sm" class="text-secondary" />
+                South Korea
+              </span>
+              <span class="bg-white border border-outline-variant px-4 py-2 rounded-full font-label text-sm flex items-center gap-2">
+                <Icon name="public" size="text-sm" class="text-secondary" />
+                Middle East
+              </span>
+              <span class="bg-white border border-outline-variant px-4 py-2 rounded-full font-label text-sm flex items-center gap-2">
+                <Icon name="public" size="text-sm" class="text-secondary" />
+                Australia
+              </span>
+            </div>
+            <p class="mt-6 text-body text-on-surface-variant italic">
+              Expanding to Europe and North America in 2024. Reach out for new agency opportunities.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: Modern Contact Form -->
+        <div class="lg:col-span-7">
+          <div class="bg-white p-8 md:p-12 border border-outline-variant rounded-xl shadow-sm">
+            <h3 class="font-headline text-3xl text-primary mb-2">Inquiry Form</h3>
+            <p class="text-on-surface-variant mb-10">
+              Fill out the form below and our export specialists will respond within 24 business hours.
+            </p>
+            <form class="grid grid-cols-1 md:grid-cols-2 gap-6" id="contactForm">
+              <div class="col-span-1">
+                <label class="block font-label text-sm text-on-surface mb-2 reveal-text reveal-label">
+                  Full Name
+                </label>
+                <input 
+                  type="text" 
+                  required 
+                  placeholder="John Doe" 
+                  class="w-full bg-surface-bright border border-outline-variant rounded-lg p-3 font-body form-input-focus transition-all"
+                />
+              </div>
+              <div class="col-span-1">
+                <label class="block font-label text-sm text-on-surface mb-2 reveal-text reveal-label">
+                  Company Email
+                </label>
+                <input 
+                  type="email" 
+                  required 
+                  placeholder="name@company.com" 
+                  class="w-full bg-surface-bright border border-outline-variant rounded-lg p-3 font-body form-input-focus transition-all"
+                />
+              </div>
+              <div class="col-span-1">
+                <label class="block font-label text-sm text-on-surface mb-2 reveal-text reveal-label">
+                  Company Name
+                </label>
+                <input 
+                  type="text" 
+                  placeholder="Global Trade Ltd" 
+                  class="w-full bg-surface-bright border border-outline-variant rounded-lg p-3 font-body form-input-focus transition-all"
+                />
+              </div>
+              <div class="col-span-1">
+                <label class="block font-label text-sm text-on-surface mb-2 reveal-text reveal-label">
+                  Country of Origin
+                </label>
+                <select class="w-full bg-surface-bright border border-outline-variant rounded-lg p-3 font-body form-input-focus transition-all">
+                  <option>Malaysia</option>
+                  <option>Singapore</option>
+                  <option>Japan</option>
+                  <option>Middle East</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="col-span-1 md:col-span-2">
+                <label class="block font-label text-sm text-on-surface mb-2 reveal-text reveal-label">
+                  Primary Interest
+                </label>
+                <div class="flex flex-wrap gap-6 mt-2">
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input 
+                      type="checkbox" 
+                      class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary focus:ring-offset-0 focus:outline-none" 
+                    />
+                    <span class="text-body-md">Raw Crackers</span>
+                  </label>
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input 
+                      type="checkbox" 
+                      class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary focus:ring-offset-0 focus:outline-none" 
+                    />
+                    <span class="text-body-md">Spices</span>
+                  </label>
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input 
+                      type="checkbox" 
+                      class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary focus:ring-offset-0 focus:outline-none" 
+                    />
+                    <span class="text-body-md">Vegetarian Food</span>
+                  </label>
+                </div>
+              </div>
+              <div class="col-span-1 md:col-span-2">
+                <label class="block font-label text-sm text-on-surface mb-2 reveal-text reveal-label">
+                  Message
+                </label>
+                <textarea 
+                  required 
+                  rows="4" 
+                  placeholder="Tell us about your requirements..." 
+                  class="w-full bg-surface-bright border border-outline-variant rounded-lg p-3 font-body form-input-focus transition-all"
+                ></textarea>
+              </div>
+              <div class="col-span-1 md:col-span-2 pt-4">
+                <button 
+                  type="submit" 
+                  class="w-full bg-primary text-on-primary py-4 rounded-lg font-headline text-xl hover:bg-opacity-95 transition-all flex items-center justify-center gap-3 cursor-pointer"
+                >
+                  Send Message
+                  <Icon name="send" />
+                </button>
+              </div>
+            </form>
+            <div class="hidden mt-6 p-4 rounded-lg text-center font-body" id="formFeedback"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Map Section with Parallax -->
+  <section class="h-[500px] w-full relative overflow-hidden" id="parallaxSection">
+    <div class="map-container absolute inset-0 w-full" id="parallaxMap">
+      <img loading="lazy" decoding="async" 
+        class="w-full h-[120%] object-cover absolute -top-[10%] scale-105" 
+        alt="Detailed map of Jakarta" 
+        src="/images/asset_13.jpg" 
+      />
+    </div>
+    <div class="absolute inset-0 bg-primary/20 pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-6 shadow-xl rounded-lg border border-primary-container z-20 max-w-sm">
+      <div class="flex items-center gap-4 mb-3">
+        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+          <Icon name="location_away" class="text-white" />
+        </div>
+        <h4 class="font-headline text-xl text-primary font-bold">Manufacturing Hub</h4>
+      </div>
+      <p class="text-body text-on-surface-variant">
+        Our main production and export facility is strategically located near the port for global efficiency.
+      </p>
+    </div>
+  </section>
+
+  <!-- Trust Row -->
+  <section class="py-16 bg-surface w-full">
+    <div class="max-w-container-max mx-auto px-grid-gutter">
+      <p class="text-center font-label text-sm uppercase tracking-widest text-on-surface-variant mb-10">
+        Export Compliance Certified
+      </p>
+      <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 hover:opacity-100 transition-opacity">
+        <div class="flex items-center gap-2 grayscale hover:grayscale-0 transition-all cursor-default text-primary">
+          <Icon name="verified_user" size="text-4xl" fill={true} />
+          <span class="font-bold">HALAL MUI</span>
+        </div>
+        <div class="flex items-center gap-2 grayscale hover:grayscale-0 transition-all cursor-default text-primary">
+          <Icon name="health_and_safety" size="text-4xl" fill={true} />
+          <span class="font-bold">BPOM REGISTERED</span>
+        </div>
+        <div class="flex items-center gap-2 grayscale hover:grayscale-0 transition-all cursor-default text-primary">
+          <Icon name="security" size="text-4xl" fill={true} />
+          <span class="font-bold">EXPORT LICENSE</span>
+        </div>
+        <div class="flex items-center gap-2 grayscale hover:grayscale-0 transition-all cursor-default text-primary">
+          <Icon name="factory" size="text-4xl" fill={true} />
+          <span class="font-bold">HEALTH CERTIFICATE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .form-input-focus:focus {
+    border-color: #1b4332;
+    box-shadow: 0 0 0 2px rgba(27, 67, 50, 0.2);
+    outline: none;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .reveal-text {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.21, 0.45, 0.32, 0.9);
+  }
+
+  .reveal-text.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .map-container {
+    filter: grayscale(100%) contrast(1.1) brightness(1.1);
+    transition: filter 0.5s ease;
+  }
+
+  .map-container:hover {
+    filter: grayscale(0%);
+  }
+</style>
+
+<script>
+  (() => {
+    // Setup reveal observer
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    const initReveal = () => {
+      document.querySelectorAll('.reveal-text').forEach(el => {
+        revealObserver.observe(el);
+      });
+    };
+
+    // Parallax Effect for Map Section & Hero Image
+    const initParallax = () => {
+      const parallaxSection = document.getElementById('parallaxSection');
+      const parallaxMap = document.getElementById('parallaxMap');
+      
+      window.addEventListener('scroll', () => {
+        const windowHeight = window.innerHeight;
+        
+        if (parallaxSection && parallaxMap) {
+          const sectionRect = parallaxSection.getBoundingClientRect();
+          if (sectionRect.top < windowHeight && sectionRect.bottom > 0) {
+            const relativeScroll = (windowHeight - sectionRect.top);
+            const yPos = relativeScroll * 0.15;
+            parallaxMap.style.transform = `translateY(${yPos - 40}px)`;
+          }
+        }
+      });
+    };
+
+    // Hero Image Micro-interaction based on cursor
+    const initHeroInteractions = () => {
+      window.addEventListener('mousemove', (e) => {
+        const amount = 8;
+        const x = (e.clientX / window.innerWidth - 0.5) * amount;
+        const y = (e.clientY / window.innerHeight - 0.5) * amount;
+        const heroImg = document.getElementById('heroImg');
+        if (heroImg) {
+          heroImg.style.transform = `scale(1.05) translate(${x}px, ${y}px)`;
+        }
+      });
+    };
+
+    // Contact Form Submission
+    const initForm = () => {
+      const contactForm = document.getElementById('contactForm');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const feedback = document.getElementById('formFeedback');
+          const submitBtn = (e.currentTarget as HTMLFormElement).querySelector('button[type="submit"]') as HTMLButtonElement;
+          const originalContent = submitBtn.innerHTML;
+
+          submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[16px]">sync</span> Sending...';
+          submitBtn.disabled = true;
+
+          setTimeout(() => {
+            if (feedback) {
+              feedback.classList.remove('hidden', 'bg-error-container', 'text-on-error-container');
+              feedback.classList.add('bg-primary-fixed', 'text-on-primary-fixed', 'p-4');
+              feedback.innerText = "Thank you! Your inquiry has been sent successfully. Our team will contact you shortly.";
+              feedback.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+
+            submitBtn.innerHTML = originalContent;
+            submitBtn.disabled = false;
+            (e.target as HTMLFormElement).reset();
+          }, 1500);
+        });
+      }
+    };
+
+    // Load hooks
+    initReveal();
+    initParallax();
+    initHeroInteractions();
+    initForm();
+  })();
+</script>

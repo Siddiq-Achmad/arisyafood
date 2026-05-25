@@ -1,0 +1,167 @@
+---
+import ProductCard from "../molecules/ProductCard.astro";
+import Icon from "../atoms/Icon.astro";
+
+const carouselProducts = [
+  {
+    title: "Premium Shrimp Crackers",
+    subtitle: "Traditional recipe, export quality",
+    image: "/images/asset_2.jpg",
+  },
+  {
+    title: "Organic White Pepper",
+    subtitle: "From Bangka Belitung regions",
+    image: "/images/asset_3.jpg",
+  },
+  {
+    title: "Spiced Cassava Chips",
+    subtitle: "Natural ingredients, no preservatives",
+    image: "/images/asset_4.jpg",
+  },
+  {
+    title: "Traditional Fish Crackers",
+    subtitle: "Authentic Indonesian ocean taste",
+    image: "/images/asset_5.jpg",
+  },
+  {
+    title: "Onion Crackers",
+    subtitle:
+      "A classic savory snack with a mild onion flavor and satisfying crunch",
+    image: "/images/asset_18.jpg",
+  },
+  {
+    title: "Crispy Roasted Peanuts",
+    subtitle:
+      "High-grade crunchy roasted peanuts coated with a special blend of traditional garlic and sweet lime leaf spices.",
+    image: "/images/products/vegetarians_peanuts.png",
+  },
+];
+
+// Duplicate items for a true seamless loop
+const seamlessProducts = [...carouselProducts, ...carouselProducts];
+---
+
+<div class="mt-8 lg:mt-12 reveal active delay-500 overflow-hidden w-full">
+  <div class="flex justify-between items-end mb-6">
+    <h3 class="text-headline-md font-bold text-primary">
+      Best Selling Products
+    </h3>
+    <div class="flex gap-2">
+      <button
+        class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all duration-200"
+        id="prevBtn"
+        aria-label="Previous Slide"
+      >
+        <Icon name="chevron_left" size="text-[20px]" />
+      </button>
+      <button
+        class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all duration-200"
+        id="nextBtn"
+        aria-label="Next Slide"
+      >
+        <Icon name="chevron_right" size="text-[20px]" />
+      </button>
+    </div>
+  </div>
+
+  <div class="relative overflow-hidden group">
+    <div
+      class="carousel-track flex gap-6 hide-scrollbar overflow-x-auto snap-x snap-mandatory pb-4"
+      id="carouselTrack"
+    >
+      {
+        seamlessProducts.map((product, index) => (
+          <ProductCard
+            title={product.title}
+            subtitle={product.subtitle}
+            image={product.image}
+            enquireText=""
+            class="w-[calc(50%-12px)] md:w-[calc(25%-18px)] snap-start shrink-0"
+            ariaHidden={index >= carouselProducts.length}
+          />
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<script>
+  (() => {
+    const track = document.getElementById("carouselTrack");
+    const nextBtn = document.getElementById("nextBtn");
+    const prevBtn = document.getElementById("prevBtn");
+
+    if (track && nextBtn && prevBtn) {
+      // Exact scroll step (card width 320px + gap 24px = 344px on desktop)
+      // We dynamically calculate it based on the first element to be safe
+      const getScrollAmount = () => {
+        const firstCard = track.querySelector("div");
+        if (!firstCard) return 344;
+        // Get gap value
+        const gap = parseInt(window.getComputedStyle(track).gap) || 24;
+        return firstCard.offsetWidth + gap;
+      };
+
+      const intervalTime = 3000;
+      let isTransitioning = false;
+
+      const scrollNext = () => {
+        if (isTransitioning) return;
+        const scrollAmount = getScrollAmount();
+
+        // If we are at or past the exact midpoint (the cloned set starts)
+        // seamlessly jump back to the start, then scroll smooth
+        if (track.scrollLeft >= track.scrollWidth / 2 - 10) {
+          track.style.scrollBehavior = "auto"; // disable smooth snap
+          track.scrollLeft = 0; // jump to start invisibly
+
+          // Force reflow
+          void track.offsetWidth;
+
+          track.style.scrollBehavior = "smooth";
+          track.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        } else {
+          track.style.scrollBehavior = "smooth";
+          track.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        }
+      };
+
+      const scrollPrev = () => {
+        if (isTransitioning) return;
+        const scrollAmount = getScrollAmount();
+
+        if (track.scrollLeft <= 0) {
+          track.style.scrollBehavior = "auto";
+          // jump to middle invisibly
+          track.scrollLeft = track.scrollWidth / 2;
+
+          // Force reflow
+          void track.offsetWidth;
+
+          track.style.scrollBehavior = "smooth";
+          track.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+        } else {
+          track.style.scrollBehavior = "smooth";
+          track.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+        }
+      };
+
+      nextBtn.addEventListener("click", scrollNext);
+      prevBtn.addEventListener("click", scrollPrev);
+
+      // Auto play functionality
+      let autoPlayInterval = setInterval(scrollNext, intervalTime);
+
+      // Pause on hover
+      const carouselContainer = track.parentElement;
+      if (carouselContainer) {
+        carouselContainer.addEventListener("mouseenter", () =>
+          clearInterval(autoPlayInterval),
+        );
+        carouselContainer.addEventListener("mouseleave", () => {
+          autoPlayInterval = setInterval(scrollNext, intervalTime);
+        });
+      }
+    }
+  })();
+</script>

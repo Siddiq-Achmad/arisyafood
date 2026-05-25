@@ -1,0 +1,88 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonicalURL?: string | URL;
+  image?: string;
+  schemaData?: any;
+}
+
+const {
+  title,
+  description,
+  canonicalURL = new URL(Astro.url.pathname, Astro.site),
+  image = "/images/asset_14.jpg",
+  schemaData,
+} = Astro.props;
+
+const ogImage = new URL(image, Astro.site);
+
+const baseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "PT ARISYAFOOD GLOBAL NIAGA",
+  "url": Astro.site?.toString(),
+  "logo": new URL("/logo.png", Astro.site).toString(),
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+6285121310331",
+    "contactType": "customer service",
+    "availableLanguage": ["en", "id"]
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/arisyafood",
+    "https://www.instagram.com/arisyafood"
+  ]
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "PT ARISYAFOOD GLOBAL NIAGA",
+  "image": ogImage.toString(),
+  "url": Astro.site?.toString(),
+  "telephone": "+6285121310331",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "North Sumatera, Medan, Indonesia",
+    "addressLocality": "Medan",
+    "postalCode": "20242",
+    "addressCountry": "ID"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -3.6252862,
+    "longitude": 98.692516
+  }
+};
+---
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<meta name="theme-color" content="#f8f9fa" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={ogImage} />
+
+<!-- JSON-LD Schemas -->
+<script type="application/ld+json" is:inline set:html={JSON.stringify(baseSchema)} />
+<script type="application/ld+json" is:inline set:html={JSON.stringify(localBusinessSchema)} />
+{schemaData && (
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schemaData)} />
+)}
