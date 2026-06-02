@@ -1,28 +1,50 @@
 ---
-import MainLayout from '../components/templates/MainLayout.astro';
-import Badge from '../components/atoms/Badge.astro';
-import Icon from '../components/atoms/Icon.astro';
+import MainLayout from "../components/templates/MainLayout.astro";
+import Badge from "../components/atoms/Badge.astro";
+import Icon from "../components/atoms/Icon.astro";
+
+const schemaData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Legality & Compliance | PT ARISYAFOOD GLOBAL NIAGA",
+    description:
+      "Upholding the highest international standards of food safety and legal transparency to ensure global trust and export excellence.",
+    url: "https://www.arisyafood.com/legality",
+  },
+];
 ---
 
-<MainLayout 
-  title="Legality & Compliance | PT ARISYAFOOD GLOBAL NIAGA" 
+<MainLayout
+  title="Legality & Compliance | PT ARISYAFOOD GLOBAL NIAGA"
   description="Upholding the highest international standards of food safety and legal transparency to ensure global trust and export excellence."
+  schemaData={schemaData}
 >
   <!-- Hero Header -->
   <header class="relative overflow-hidden bg-primary py-24 md:py-32">
     <div class="absolute inset-0 opacity-10">
-      <div class="absolute top-0 left-0 w-full h-full"
-        style="background-image: radial-gradient(circle at 2px 2px, #ffffff 1px, transparent 0); background-size: 40px 40px;">
+      <div
+        class="absolute top-0 left-0 w-full h-full"
+        style="background-image: radial-gradient(circle at 2px 2px, #ffffff 1px, transparent 0); background-size: 40px 40px;"
+      >
       </div>
     </div>
-    <div class="max-w-container-max mx-auto px-grid-gutter relative z-10 text-center">
+    <div
+      class="max-w-container-max mx-auto px-grid-gutter relative z-10 text-center"
+    >
       <div class="reveal-animation mb-6">
-        <h1 class="text-on-primary font-display text-display-lg font-bold tracking-tight">
+        <h1
+          class="text-on-primary font-display text-display-lg font-bold tracking-tight text-2xl uppercase"
+        >
           Official Certifications &amp; Compliance
         </h1>
       </div>
-      <p class="text-on-primary-container max-w-2xl mx-auto text-body-lg leading-relaxed reveal-text" style="transition-delay: 200ms;">
-        Upholding the highest international standards of food safety and legal transparency to ensure global trust and export excellence.
+      <p
+        class="text-on-primary-container max-w-2xl mx-auto text-body-lg leading-relaxed reveal-text"
+        style="transition-delay: 200ms;"
+      >
+        Upholding the highest international standards of food safety and legal
+        transparency to ensure global trust and export excellence.
       </p>
     </div>
   </header>
@@ -32,88 +54,158 @@ import Icon from '../components/atoms/Icon.astro';
     <section>
       <div class="flex flex-col md:flex-row gap-12 items-start">
         <div class="md:w-1/3 reveal-text">
-          <h2 class="text-primary text-headline-lg font-bold mb-6">Business Registration</h2>
+          <h2 class="text-primary text-headline-lg font-bold mb-6">
+            Business Registration
+          </h2>
           <p class="text-on-surface-variant text-body-lg leading-relaxed">
-            As a registered entity with the Indonesian Ministry of Law and Human Rights, we operate with complete transparency and adherence to national trade regulations.
+            As a registered entity with the Indonesian Ministry of Law and Human
+            Rights, we operate with complete transparency and adherence to
+            national trade regulations.
           </p>
-          <div class="mt-8 p-6 bg-surface-container rounded-xl border border-outline-variant">
+          <div
+            class="mt-8 p-6 bg-surface-container rounded-xl border border-outline-variant"
+          >
             <div class="flex items-center gap-4 text-primary">
-              <Icon name="verified_user" size="text-3xl" class="text-secondary" />
+              <Icon
+                name="verified_user"
+                size="text-3xl"
+                class="text-secondary"
+              />
               <span class="font-bold">Government Verified Entity</span>
             </div>
           </div>
         </div>
-        
+
         <div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
           <!-- NIB Card -->
-          <div class="certification-card bg-surface-container-lowest p-8 rounded-xl border border-outline-variant hover:border-secondary transition-all group">
+          <div
+            class="certification-card bg-surface-container-lowest p-8 rounded-xl border border-outline-variant hover:border-secondary transition-all group"
+          >
             <div class="flex justify-between items-start mb-6">
-              <div class="w-12 h-12 bg-primary-container flex items-center justify-center rounded-lg text-on-primary-container">
+              <div
+                class="w-12 h-12 bg-primary-container flex items-center justify-center rounded-lg text-on-primary-container"
+              >
                 <Icon name="description" />
               </div>
-              <span class="text-label-md font-bold text-outline tracking-widest uppercase">NATIONAL</span>
+              <span
+                class="text-label-md font-bold text-outline tracking-widest uppercase"
+                >NATIONAL</span
+              >
             </div>
             <h3 class="text-headline-md font-bold mb-2">NIB</h3>
             <p class="text-on-surface-variant text-body-md mb-4">
-              Nomor Induk Berusaha (Business Identification Number) serves as the base permit for all business activities.
+              Nomor Induk Berusaha (Business Identification Number) serves as
+              the base permit for all business activities.
             </p>
-            <div class="pt-4 border-t border-outline-variant flex items-center justify-between">
-              <span class="text-primary font-bold text-label-md">Active &amp; Verified</span>
-              <Icon name="check_circle" class="text-outline group-hover:text-secondary transition-colors" />
+            <div
+              class="pt-4 border-t border-outline-variant flex items-center justify-between"
+            >
+              <span class="text-primary font-bold text-label-md"
+                >Active &amp; Verified</span
+              >
+              <Icon
+                name="check_circle"
+                class="text-outline group-hover:text-secondary transition-colors"
+              />
             </div>
           </div>
-          
+
           <!-- SIUP Card -->
-          <div class="certification-card bg-surface-container-lowest p-8 rounded-xl border border-outline-variant hover:border-secondary transition-all group">
+          <div
+            class="certification-card bg-surface-container-lowest p-8 rounded-xl border border-outline-variant hover:border-secondary transition-all group"
+          >
             <div class="flex justify-between items-start mb-6">
-              <div class="w-12 h-12 bg-primary-container flex items-center justify-center rounded-lg text-on-primary-container">
+              <div
+                class="w-12 h-12 bg-primary-container flex items-center justify-center rounded-lg text-on-primary-container"
+              >
                 <Icon name="gavel" />
               </div>
-              <span class="text-label-md font-bold text-outline tracking-widest uppercase">TRADE</span>
+              <span
+                class="text-label-md font-bold text-outline tracking-widest uppercase"
+                >TRADE</span
+              >
             </div>
             <h3 class="text-headline-md font-bold mb-2">SIUP</h3>
             <p class="text-on-surface-variant text-body-md mb-4">
-              Surat Izin Usaha Perdagangan (Trading Business License) authorizing our global export and local distribution.
+              Surat Izin Usaha Perdagangan (Trading Business License)
+              authorizing our global export and local distribution.
             </p>
-            <div class="pt-4 border-t border-outline-variant flex items-center justify-between">
-              <span class="text-primary font-bold text-label-md">Active &amp; Verified</span>
-              <Icon name="check_circle" class="text-outline group-hover:text-secondary transition-colors" />
+            <div
+              class="pt-4 border-t border-outline-variant flex items-center justify-between"
+            >
+              <span class="text-primary font-bold text-label-md"
+                >Active &amp; Verified</span
+              >
+              <Icon
+                name="check_circle"
+                class="text-outline group-hover:text-secondary transition-colors"
+              />
             </div>
           </div>
 
           <!-- NPWP Card -->
-          <div class="certification-card bg-surface-container-lowest p-8 rounded-xl border border-outline-variant hover:border-secondary transition-all group">
+          <div
+            class="certification-card bg-surface-container-lowest p-8 rounded-xl border border-outline-variant hover:border-secondary transition-all group"
+          >
             <div class="flex justify-between items-start mb-6">
-              <div class="w-12 h-12 bg-primary-container flex items-center justify-center rounded-lg text-on-primary-container">
+              <div
+                class="w-12 h-12 bg-primary-container flex items-center justify-center rounded-lg text-on-primary-container"
+              >
                 <Icon name="receipt_long" />
               </div>
-              <span class="text-label-md font-bold text-outline tracking-widest uppercase">TAX</span>
+              <span
+                class="text-label-md font-bold text-outline tracking-widest uppercase"
+                >TAX</span
+              >
             </div>
             <h3 class="text-headline-md font-bold mb-2">NPWP</h3>
             <p class="text-on-surface-variant text-body-md mb-4">
-              Nomor Pokok Wajib Pajak (Tax Identification Number) is our official corporate tax registration for global operations.
+              Nomor Pokok Wajib Pajak (Tax Identification Number) is our
+              official corporate tax registration for global operations.
             </p>
-            <div class="pt-4 border-t border-outline-variant flex items-center justify-between">
-              <span class="text-primary font-bold text-label-md">Active &amp; Verified</span>
-              <Icon name="check_circle" class="text-outline group-hover:text-secondary transition-colors" />
+            <div
+              class="pt-4 border-t border-outline-variant flex items-center justify-between"
+            >
+              <span class="text-primary font-bold text-label-md"
+                >Active &amp; Verified</span
+              >
+              <Icon
+                name="check_circle"
+                class="text-outline group-hover:text-secondary transition-colors"
+              />
             </div>
           </div>
 
           <!-- Ministry Approval Card -->
-          <div class="certification-card bg-surface-container-lowest p-8 rounded-xl border border-outline-variant hover:border-secondary transition-all group">
+          <div
+            class="certification-card bg-surface-container-lowest p-8 rounded-xl border border-outline-variant hover:border-secondary transition-all group"
+          >
             <div class="flex justify-between items-start mb-6">
-              <div class="w-12 h-12 bg-primary-container flex items-center justify-center rounded-lg text-on-primary-container">
+              <div
+                class="w-12 h-12 bg-primary-container flex items-center justify-center rounded-lg text-on-primary-container"
+              >
                 <Icon name="verified" />
               </div>
-              <span class="text-label-md font-bold text-outline tracking-widest uppercase">APPROVAL</span>
+              <span
+                class="text-label-md font-bold text-outline tracking-widest uppercase"
+                >APPROVAL</span
+              >
             </div>
             <h3 class="text-headline-md font-bold mb-2">SK Kemenkumham</h3>
             <p class="text-on-surface-variant text-body-md mb-4">
-              Official endorsement from the Ministry of Law and Human Rights certifying our status as a legally established corporation.
+              Official endorsement from the Ministry of Law and Human Rights
+              certifying our status as a legally established corporation.
             </p>
-            <div class="pt-4 border-t border-outline-variant flex items-center justify-between">
-              <span class="text-primary font-bold text-label-md">Active &amp; Verified</span>
-              <Icon name="check_circle" class="text-outline group-hover:text-secondary transition-colors" />
+            <div
+              class="pt-4 border-t border-outline-variant flex items-center justify-between"
+            >
+              <span class="text-primary font-bold text-label-md"
+                >Active &amp; Verified</span
+              >
+              <Icon
+                name="check_circle"
+                class="text-outline group-hover:text-secondary transition-colors"
+              />
             </div>
           </div>
         </div>
@@ -123,75 +215,126 @@ import Icon from '../components/atoms/Icon.astro';
     <!-- Quality Certifications (Bento Grid) -->
     <section>
       <div class="mb-16 text-center reveal-text">
-        <h2 class="text-primary text-display-lg font-display font-bold mb-4">International Standards</h2>
+        <h2 class="text-primary text-display-lg font-display font-bold mb-4">
+          International Standards
+        </h2>
         <div class="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
       </div>
-      
+
       <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
         <!-- ISO 22000 -->
-        <div class="md:col-span-8 bg-surface-container-high rounded-xl overflow-hidden relative group p-10 flex flex-col justify-end min-h-[400px] certification-card">
+        <div
+          class="md:col-span-8 bg-surface-container-high rounded-xl overflow-hidden relative group p-10 flex flex-col justify-end min-h-[400px] certification-card"
+        >
           <div class="absolute inset-0 z-0 opacity-20">
-            <img loading="lazy" decoding="async" 
+            <img
+              loading="lazy"
+              decoding="async"
               class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105"
               alt="A clean, futuristic industrial food processing plant representing high safety standards of ISO 22000."
-              src="/images/asset_16.jpg" 
+              src="/images/asset_16.jpg"
             />
           </div>
           <div class="relative z-10">
             <Badge variant="primary-fixed" class="mb-4">ISO 22000:2018</Badge>
-            <h3 class="text-headline-lg font-bold text-primary mb-4">Food Safety Management</h3>
+            <h3 class="text-headline-lg font-bold text-primary mb-4">
+              Food Safety Management
+            </h3>
             <p class="text-on-surface-variant max-w-lg text-body-lg">
-              Our comprehensive food safety management system ensures every step of our supply chain meets rigorous global benchmarks for consumer safety.
+              Our comprehensive food safety management system ensures every step
+              of our supply chain meets rigorous global benchmarks for consumer
+              safety.
             </p>
           </div>
         </div>
 
         <!-- Halal -->
-        <div class="md:col-span-4 bg-surface-container-lowest border border-outline-variant rounded-xl p-8 flex flex-col hover:shadow-xl transition-all duration-300 certification-card">
+        <div
+          class="md:col-span-4 bg-surface-container-lowest border border-outline-variant rounded-xl p-8 flex flex-col hover:shadow-xl transition-all duration-300 certification-card"
+        >
           <div class="mb-auto">
-            <div class="w-16 h-16 bg-secondary-container flex items-center justify-center rounded-xl mb-6">
-              <Icon name="restaurant" size="text-[40px]" class="text-on-secondary-container" />
+            <div
+              class="w-16 h-16 bg-secondary-container flex items-center justify-center rounded-xl mb-6"
+            >
+              <Icon
+                name="restaurant"
+                size="text-[40px]"
+                class="text-on-secondary-container"
+              />
             </div>
-            <h3 class="text-headline-md font-bold text-primary mb-2">Halal Certification</h3>
+            <h3 class="text-headline-md font-bold text-primary mb-2">
+              Halal Certification
+            </h3>
             <p class="text-on-surface-variant text-body-md">
-              Verified by BPJPH and MUI, ensuring all products strictly adhere to Islamic dietary laws and hygienic practices.
+              Verified by BPJPH and MUI, ensuring all products strictly adhere
+              to Islamic dietary laws and hygienic practices.
             </p>
           </div>
-          <div class="mt-8 flex items-center gap-2 text-secondary font-bold text-label-md">
+          <div
+            class="mt-8 flex items-center gap-2 text-secondary font-bold text-label-md"
+          >
             <span>Certified Global Reach</span>
             <Icon name="star" />
           </div>
         </div>
 
         <!-- Deed of Establishment -->
-        <div class="md:col-span-4 bg-surface-container-lowest border border-outline-variant rounded-xl p-8 flex flex-col hover:shadow-xl transition-all duration-300 certification-card">
+        <div
+          class="md:col-span-4 bg-surface-container-lowest border border-outline-variant rounded-xl p-8 flex flex-col hover:shadow-xl transition-all duration-300 certification-card"
+        >
           <div class="mb-auto">
-            <div class="w-16 h-16 bg-primary-container flex items-center justify-center rounded-xl mb-6">
-              <Icon name="history_edu" size="text-[40px]" class="text-on-primary-container" />
+            <div
+              class="w-16 h-16 bg-primary-container flex items-center justify-center rounded-xl mb-6"
+            >
+              <Icon
+                name="history_edu"
+                size="text-[40px]"
+                class="text-on-primary-container"
+              />
             </div>
-            <h3 class="text-headline-md font-bold text-primary mb-2">Deed of Establishment</h3>
+            <h3 class="text-headline-md font-bold text-primary mb-2">
+              Deed of Establishment
+            </h3>
             <p class="text-on-surface-variant text-body-md">
-              Officially certified Akte Pendirian drafted by licensed public notary, establishing the legal corporate foundation of our enterprise.
+              Officially certified Akte Pendirian drafted by licensed public
+              notary, establishing the legal corporate foundation of our
+              enterprise.
             </p>
           </div>
-          <div class="mt-8 text-primary font-bold flex items-center gap-2 text-label-md">
+          <div
+            class="mt-8 text-primary font-bold flex items-center gap-2 text-label-md"
+          >
             <Icon name="gavel" class="text-secondary" />
             <span>Legally Approved</span>
           </div>
         </div>
 
         <!-- AR-E & BPOM Registered -->
-        <div class="md:col-span-8 bg-tertiary text-on-tertiary rounded-xl p-10 flex items-center relative overflow-hidden certification-card">
+        <div
+          class="md:col-span-8 bg-tertiary text-on-tertiary rounded-xl p-10 flex items-center relative overflow-hidden certification-card"
+        >
           <div class="flex-1 z-10">
-            <Badge variant="accent" class="mb-4">Global Trade &amp; Safety</Badge>
-            <h3 class="text-headline-lg font-bold mb-4 font-display">AR-E &amp; BPOM Registered</h3>
+            <Badge variant="accent" class="mb-4"
+              >Global Trade &amp; Safety</Badge
+            >
+            <h3 class="text-headline-lg font-bold mb-4 font-display">
+              AR-E &amp; BPOM Registered
+            </h3>
             <p class="text-on-tertiary-container text-body-lg max-w-xl">
-              Fully registered under BPOM (Indonesian FDA) and AR-E certification, guaranteeing supreme product hygiene, safety compliance, and smooth clearance across global borders.
+              Fully registered under BPOM (Indonesian FDA) and AR-E
+              certification, guaranteeing supreme product hygiene, safety
+              compliance, and smooth clearance across global borders.
             </p>
           </div>
           <div class="hidden lg:block z-10">
-            <div class="w-48 h-48 border-4 border-on-tertiary-container border-dashed rounded-full flex items-center justify-center rotate-12">
-              <Icon name="health_and_safety" size="text-6xl" class="opacity-50" />
+            <div
+              class="w-48 h-48 border-4 border-on-tertiary-container border-dashed rounded-full flex items-center justify-center rotate-12"
+            >
+              <Icon
+                name="health_and_safety"
+                size="text-6xl"
+                class="opacity-50"
+              />
             </div>
           </div>
         </div>
@@ -200,26 +343,51 @@ import Icon from '../components/atoms/Icon.astro';
 
     <!-- Trust Row -->
     <section class="border-y border-outline-variant py-12 reveal-text">
-      <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 grayscale opacity-60 hover:grayscale-0 transition-all duration-500">
+      <div
+        class="flex flex-wrap justify-center items-center gap-12 md:gap-24 grayscale opacity-60 hover:grayscale-0 transition-all duration-500"
+      >
         <div class="flex flex-col items-center">
-          <div class="text-2xl font-black text-on-surface-variant tracking-tighter">HALAL <span class="text-secondary">CERT</span></div>
-          <span class="text-[10px] font-bold tracking-[0.3em] mt-1">INDONESIA</span>
+          <div
+            class="text-2xl font-black text-on-surface-variant tracking-tighter"
+          >
+            HALAL <span class="text-secondary">CERT</span>
+          </div>
+          <span class="text-[10px] font-bold tracking-[0.3em] mt-1"
+            >INDONESIA</span
+          >
         </div>
         <div class="flex flex-col items-center">
-          <div class="text-2xl font-black text-on-surface-variant tracking-tighter">ISO <span class="text-secondary">22000</span></div>
-          <span class="text-[10px] font-bold tracking-[0.3em] mt-1">QUALITY MGMT</span>
+          <div
+            class="text-2xl font-black text-on-surface-variant tracking-tighter"
+          >
+            ISO <span class="text-secondary">22000</span>
+          </div>
+          <span class="text-[10px] font-bold tracking-[0.3em] mt-1"
+            >QUALITY MGMT</span
+          >
         </div>
         <div class="flex flex-col items-center">
-          <div class="text-2xl font-black text-on-surface-variant tracking-tighter">AR-E <span class="text-secondary">REG</span></div>
-          <span class="text-[10px] font-bold tracking-[0.3em] mt-1">REGISTERED EXPORTER</span>
+          <div
+            class="text-2xl font-black text-on-surface-variant tracking-tighter"
+          >
+            AR-E <span class="text-secondary">REG</span>
+          </div>
+          <span class="text-[10px] font-bold tracking-[0.3em] mt-1"
+            >REGISTERED EXPORTER</span
+          >
         </div>
         <div class="flex flex-col items-center">
-          <div class="text-2xl font-black text-on-surface-variant tracking-tighter">BPOM <span class="text-secondary">APPRV</span></div>
-          <span class="text-[10px] font-bold tracking-[0.3em] mt-1">GOVERNMENT</span>
+          <div
+            class="text-2xl font-black text-on-surface-variant tracking-tighter"
+          >
+            BPOM <span class="text-secondary">APPRV</span>
+          </div>
+          <span class="text-[10px] font-bold tracking-[0.3em] mt-1"
+            >GOVERNMENT</span
+          >
         </div>
       </div>
     </section>
-
   </main>
 </MainLayout>
 
@@ -263,42 +431,50 @@ import Icon from '../components/atoms/Icon.astro';
 
 <script>
   // Setup reveal observer
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-      }
-    });
-  }, {
-    threshold: 0.15,
-    rootMargin: '0px 0px -50px 0px'
-  });
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+      rootMargin: "0px 0px -50px 0px",
+    },
+  );
 
   const initReveal = () => {
-    document.querySelectorAll('.reveal-text').forEach(el => {
+    document.querySelectorAll(".reveal-text").forEach((el) => {
       revealObserver.observe(el);
     });
   };
 
   // Micro-interaction for certification card reveal on scroll
   const initCards = () => {
-    const cards = document.querySelectorAll('.certification-card');
-    
+    const cards = document.querySelectorAll(".certification-card");
+
     const observerOptions = {
-      threshold: 0.1
+      threshold: 0.1,
     };
 
     const cardObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('opacity-100', 'translate-y-0');
-          entry.target.classList.remove('opacity-0', 'translate-y-8');
+          entry.target.classList.add("opacity-100", "translate-y-0");
+          entry.target.classList.remove("opacity-0", "translate-y-8");
         }
       });
     }, observerOptions);
 
-    cards.forEach(card => {
-      card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
+    cards.forEach((card) => {
+      card.classList.add(
+        "transition-all",
+        "duration-700",
+        "opacity-0",
+        "translate-y-8",
+      );
       cardObserver.observe(card);
     });
   };

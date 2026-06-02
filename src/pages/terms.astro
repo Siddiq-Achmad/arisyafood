@@ -1,11 +1,22 @@
 ---
 import MainLayout from '../components/templates/MainLayout.astro';
 import Icon from '../components/atoms/Icon.astro';
+
+const schemaData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Terms & Conditions | PT ARISYAFOOD GLOBAL NIAGA",
+    "description": "Please read these terms carefully before using our export services or website. PT ARISYAFOOD GLOBAL NIAGA.",
+    "url": "https://www.arisyafood.com/terms"
+  }
+];
 ---
 
 <MainLayout 
   title="Terms &amp; Conditions | PT ARISYAFOOD GLOBAL NIAGA" 
   description="Please read these terms carefully before using our export services or website. PT ARISYAFOOD GLOBAL NIAGA."
+  schemaData={schemaData}
 >
   <main class="max-w-[1280px] mx-auto px-6 py-16 md:py-24">
     <!-- Hero Header -->

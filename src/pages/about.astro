@@ -6,67 +6,79 @@ import Icon from "../components/atoms/Icon.astro";
 // Bento values dataset
 const values = [
   {
-    title: "Uncompromising Quality",
-    description:
-      "Every batch undergoes rigorous lab testing to meet HALAL MUI, BPOM, and Export License standards. We don't just export products; we export confidence.",
-    icon: "verified",
-    colSpan: "md:col-span-2 bg-surface-container-high text-primary",
-  },
-  {
     title: "Integrity",
     description:
-      "Transparent supply chains and ethical sourcing from local farmer collectives.",
+      "Honest, transparent, and reliable in every transaction — from first contact to final delivery.",
     icon: "handshake",
-    colSpan: "bg-secondary-container text-on-secondary-container",
+    colSpan: "bg-surface-container-high text-primary",
   },
   {
-    title: "Reliability",
+    title: "Quality",
     description:
-      "Guaranteed delivery timelines and stable pricing for our long-term global partners.",
-    icon: "schedule",
-    colSpan: "bg-surface-container-highest text-primary",
+      "Zero compromise on product quality, certification standards, or food safety compliance.",
+    icon: "verified",
+    colSpan: "bg-secondary-container text-on-secondary-container md:col-span-2",
   },
   {
-    title: "Sustainability",
+    title: "Partnership",
     description:
-      "Empowering Indonesian agricultural communities while implementing eco-friendly packaging and processing methods.",
-    icon: "eco",
+      "Building mutual growth between Indonesian producers, our company, and global buyers.",
+    icon: "groups",
     colSpan:
-      "md:col-span-2 bg-primary-container text-on-primary-container flex items-center gap-8",
+      "md:col-span-3 bg-primary-container text-on-primary-container flex items-center gap-8",
   },
 ];
 
-// Production previews dataset
-const previews = [
+// Team dataset
+const team = [
   {
-    title: "Quality Control Lab",
-    image: "/images/asset_6.jpg",
+    name: "Rendy",
+    role: "Company Director",
+    image: "/images/Team/Rendy _ Company Director.png",
   },
   {
-    title: "Global Logistics Center",
-    image: "/images/asset_7.jpg",
+    name: "Ryandi",
+    role: "Export & Marketing Manager",
+    image: "/images/Team/Ryandi _ Export & Marketing Manager_.png",
   },
   {
-    title: "Automated Packaging",
-    image: "/images/asset_8.jpg",
-  },
-  {
-    title: "Expert Production Team",
-    image: "/images/asset_9.jpg",
+    name: "Dody",
+    role: "Production Manager",
+    image: "/images/Team/Dody _ Production Manager.png",
   },
 ];
+// AboutPage schema for AEO
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "PT Arisyafood Global Niaga",
+    "description": "An export trading company based in Medan, Indonesia, specializing in premium spices, raw crackers, and vegetarian snacks.",
+    "foundingDate": "2026",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Medan",
+      "addressRegion": "North Sumatra",
+      "addressCountry": "Indonesia"
+    }
+  }
+};
 ---
 
 <MainLayout
-  title="About Us | PT ARISYAFOOD GLOBAL NIAGA"
+  title="About Us | Top Indonesian Export Company | Arisyafood"
   description="From the fertile lands of Indonesia to tables across the globe, PT Arisyafood Global Niaga bridges the gap between traditional agricultural excellence and international quality standards."
+  schemaData={[aboutSchema]}
 >
   <!-- Hero Section -->
   <section
     class="relative h-[614px] min-h-[500px] flex items-center justify-center overflow-hidden w-full"
   >
     <div class="absolute inset-0 z-0">
-      <img fetchpriority="high" decoding="sync"
+      <img
+        fetchpriority="high"
+        decoding="sync"
         class="w-full h-[120%] object-cover absolute -top-[10%] parallax-bg"
         id="hero-parallax"
         alt="A panoramic high-resolution photograph of lush, emerald green Indonesian spice plantations under a soft morning mist."
@@ -76,7 +88,7 @@ const previews = [
     </div>
     <div class="relative z-10 text-center px-grid-gutter max-w-4xl">
       <h1
-        class="font-display text-5xl md:text-6xl lg:text-7xl text-on-primary mb-6 font-bold reveal-text"
+        class="font-display text-5xl md:text-6xl lg:text-7xl text-on-primary mb-6 font-semibold reveal-text"
       >
         Our Heritage, <br />Global Excellence
       </h1>
@@ -99,34 +111,37 @@ const previews = [
       <div class="space-y-6">
         <span
           class="text-secondary font-semibold tracking-widest uppercase reveal-text"
-          >Our Story</span
+          >Vision & Mission</span
         >
         <h2
-          class="font-headline text-3xl md:text-4xl text-primary font-bold reveal-text"
+          class="font-headline text-3xl md:text-4xl text-primary font-semibold reveal-text"
           style="transition-delay: 100ms;"
         >
-          Bringing the Best of Indonesia to the World
+          To be Indonesia's most trusted export partner
         </h2>
         <p
-          class="font-body text-on-surface-variant reveal-text"
+          class="font-body text-on-surface-variant font-semibold reveal-text"
           style="transition-delay: 200ms;"
         >
-          PT Arisyafood Global Niaga was founded with a singular vision: to
-          elevate Indonesian agricultural products to the global stage. We began
-          as a local collective of farmers and artisans dedicated to preserving
-          the authentic flavors of Indonesian spices, crackers, and traditional
-          snacks.
+          Vision: To be Indonesia's most trusted export partner for authentic
+          snack products, recognized globally for quality, consistency, and the
+          richness of Indonesian culinary heritage.
         </p>
-        <p
-          class="font-body text-on-surface-variant reveal-text"
+        <ul
+          class="font-body text-on-surface-variant list-disc pl-5 space-y-2 reveal-text"
           style="transition-delay: 300ms;"
         >
-          Today, we have evolved into a leading export partner, recognized for
-          our uncompromising commitment to quality and food safety. By combining
-          ancestral knowledge with modern manufacturing technology, we ensure
-          that every product leaving our facility carries the soul of Indonesia
-          and the reliability of global industrial standards.
-        </p>
+          <li>
+            To provide premium-quality Indonesian food products with
+            international standards.
+          </li>
+          <li>
+            To build long-term partnerships with global buyers and distributors.
+          </li>
+          <li>To promote authentic Indonesian culinary heritage worldwide.</li>
+          <li>To maintain consistency in quality, packaging, and delivery.</li>
+          <li>To support sustainable growth for Indonesian food industries.</li>
+        </ul>
 
         <!-- Experience Stats -->
         <div
@@ -134,15 +149,15 @@ const previews = [
           style="transition-delay: 400ms;"
         >
           <div class="text-center p-4 bg-surface-container rounded-xl">
-            <div class="text-3xl font-bold text-primary">15+</div>
+            <div class="text-3xl font-semibold text-primary">15+</div>
             <div class="text-sm">Years Experience</div>
           </div>
           <div class="text-center p-4 bg-surface-container rounded-xl">
-            <div class="text-3xl font-bold text-primary">8</div>
+            <div class="text-3xl font-semibold text-primary">8</div>
             <div class="text-sm">Major Markets</div>
           </div>
           <div class="text-center p-4 bg-surface-container rounded-xl">
-            <div class="text-3xl font-bold text-primary">100%</div>
+            <div class="text-3xl font-semibold text-primary">100%</div>
             <div class="text-sm">Indonesian Heritage</div>
           </div>
         </div>
@@ -153,7 +168,9 @@ const previews = [
         <div
           class="rounded-2xl overflow-hidden shadow-xl border-4 border-white"
         >
-          <img loading="lazy" decoding="async"
+          <img
+            loading="lazy"
+            decoding="async"
             class="w-full aspect-square object-cover"
             alt="A close-up, high-detail professional food photograph of various Indonesian spices."
             src="/images/asset_11.jpg"
@@ -179,7 +196,9 @@ const previews = [
     class="bg-primary text-on-primary py-section-gap-desktop relative overflow-hidden w-full"
   >
     <div class="max-w-container-max mx-auto px-grid-gutter text-center mb-16">
-      <h2 class="font-headline text-3xl md:text-4xl mb-4 font-bold reveal-text">
+      <h2
+        class="font-headline text-3xl md:text-4xl mb-4 font-semibold reveal-text"
+      >
         Our Global Footprint
       </h2>
       <p
@@ -203,7 +222,7 @@ const previews = [
           size="text-[40px]"
           class="mb-4 text-secondary-fixed"
         />
-        <h3 class="text-xl font-bold mb-2">SE Asia</h3>
+        <h3 class="text-xl font-semibold mb-2">SE Asia</h3>
         <p class="text-sm opacity-70">Malaysia, Singapore, Brunei</p>
       </div>
       <div
@@ -215,7 +234,7 @@ const previews = [
           size="text-[40px]"
           class="mb-4 text-secondary-fixed"
         />
-        <h3 class="text-xl font-bold mb-2">East Asia</h3>
+        <h3 class="text-xl font-semibold mb-2">East Asia</h3>
         <p class="text-sm opacity-70">Japan, Korea, China, Taiwan</p>
       </div>
       <div
@@ -227,7 +246,7 @@ const previews = [
           size="text-[40px]"
           class="mb-4 text-secondary-fixed"
         />
-        <h3 class="text-xl font-bold mb-2">Middle East</h3>
+        <h3 class="text-xl font-semibold mb-2">Middle East</h3>
         <p class="text-sm opacity-70">UAE, Saudi Arabia, Kuwait</p>
       </div>
       <div
@@ -235,7 +254,7 @@ const previews = [
         style="transition-delay: 450ms;"
       >
         <Icon name="map" size="text-[40px]" class="mb-4 text-secondary-fixed" />
-        <h3 class="text-xl font-bold mb-2">Europe</h3>
+        <h3 class="text-xl font-semibold mb-2">Europe</h3>
         <p class="text-sm opacity-70">Germany, UK, Netherlands</p>
       </div>
       <div
@@ -247,7 +266,7 @@ const previews = [
           size="text-[40px]"
           class="mb-4 text-secondary-fixed"
         />
-        <h3 class="text-xl font-bold mb-2">Australia</h3>
+        <h3 class="text-xl font-semibold mb-2">Australia</h3>
         <p class="text-sm opacity-70">Direct Cargo to Key Ports</p>
       </div>
       <div
@@ -259,7 +278,7 @@ const previews = [
           size="text-[40px]"
           class="mb-4 text-secondary-fixed"
         />
-        <h3 class="text-xl font-bold mb-2">Logistics</h3>
+        <h3 class="text-xl font-semibold mb-2">Logistics</h3>
         <p class="text-sm opacity-70">Global Ocean & Air Freight</p>
       </div>
     </div>
@@ -270,7 +289,7 @@ const previews = [
     class="py-section-gap-desktop max-w-container-max mx-auto px-grid-gutter w-full"
   >
     <h2
-      class="font-headline text-3xl md:text-4xl text-primary text-center mb-16 font-bold reveal-text"
+      class="font-headline text-3xl md:text-4xl text-primary text-center mb-16 font-semibold reveal-text"
     >
       Our Core Values
     </h2>
@@ -293,7 +312,7 @@ const previews = [
                     class="mb-4"
                     fill={true}
                   />
-                  <h3 class="text-2xl font-bold mb-2">{val.title}</h3>
+                  <h3 class="text-2xl font-semibold mb-2">{val.title}</h3>
                   <p class="text-on-surface-variant max-w-md">
                     {val.description}
                   </p>
@@ -309,7 +328,7 @@ const previews = [
                     />
                   </div>
                   <div>
-                    <h3 class="text-2xl font-bold mb-2">{val.title}</h3>
+                    <h3 class="text-2xl font-semibold mb-2">{val.title}</h3>
                     <p class="opacity-80 leading-relaxed">{val.description}</p>
                   </div>
                 </>
@@ -318,7 +337,7 @@ const previews = [
                 <div class="flex flex-col justify-between h-full">
                   <Icon name={val.icon} size="text-[48px]" />
                   <div>
-                    <h3 class="text-2xl font-bold mb-2">{val.title}</h3>
+                    <h3 class="text-2xl font-semibold mb-2">{val.title}</h3>
                     <p class="opacity-90">{val.description}</p>
                   </div>
                 </div>
@@ -330,54 +349,52 @@ const previews = [
     </div>
   </section>
 
-  <!-- Manufacturing Preview -->
-  <section class="bg-surface-bright py-section-gap-desktop w-full" id="process">
+  <!-- Meet Our Team -->
+  <section class="bg-surface-bright py-section-gap-desktop w-full" id="team">
     <div class="max-w-container-max mx-auto px-grid-gutter">
       <div
         class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6 reveal-text"
       >
         <div class="max-w-xl">
           <span class="text-secondary font-semibold tracking-widest uppercase"
-            >Inside Arisyafood</span
+            >Our Leadership</span
           >
           <h2
-            class="font-headline text-3xl md:text-4xl text-primary font-bold mt-4"
+            class="font-headline text-3xl md:text-4xl text-primary font-semibold mt-4"
           >
-            State-of-the-Art Manufacturing
+            Meet Our Team
           </h2>
           <p class="text-on-surface-variant mt-4">
-            Our production facilities combine large-scale capacity with
-            meticulous oversight to ensure traditional recipes stay authentic
-            during mass production.
+            Driven by passion and expertise, our leadership team ensures that
+            every product exported meets the highest global standards.
           </p>
         </div>
-        <Button href="/gallery" variant="outline" class="group gap-2">
-          View Facility Gallery
-          <Icon
-            name="arrow_forward"
-            size="text-[14px]"
-            class="group-hover:translate-x-1 transition-transform"
-          />
-        </Button>
       </div>
 
-      <!-- Facility Images Grid -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <!-- Team Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {
-          previews.map((preview, index) => (
+          team.map((member, index) => (
             <div
-              class="aspect-square rounded-2xl overflow-hidden group cursor-pointer relative reveal-text"
+              class="rounded-2xl overflow-hidden group relative reveal-text flex flex-col bg-surface border border-outline-variant shadow-sm hover:shadow-md transition-shadow"
               style={`transition-delay: ${(index + 1) * 100}ms;`}
             >
-              <img loading="lazy" decoding="async"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                alt={preview.title}
-                src={preview.image}
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                <span class="text-on-primary font-semibold">
-                  {preview.title}
-                </span>
+              <div class="aspect-[3/4] overflow-hidden bg-surface-container-lowest">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  alt={member.name}
+                  src={member.image}
+                />
+              </div>
+              <div class="p-6 bg-white text-center">
+                <h3 class="text-xl font-semibold text-primary mb-1">
+                  {member.name}
+                </h3>
+                <p class="text-secondary text-sm font-semibold tracking-wide uppercase">
+                  {member.role}
+                </p>
               </div>
             </div>
           ))
@@ -394,7 +411,7 @@ const previews = [
           >Seamless Trade</span
         >
         <h2
-          class="font-headline text-3xl md:text-4xl text-primary font-bold mt-4"
+          class="font-headline text-3xl md:text-4xl text-primary font-semibold mt-4"
         >
           Our Export Process
         </h2>
@@ -420,7 +437,7 @@ const previews = [
             size="text-[48px]"
             class="text-secondary mb-6 block group-hover:scale-110 transition-transform duration-300"
           />
-          <h3 class="font-headline text-xl text-primary font-bold mb-3">
+          <h3 class="font-headline text-xl text-primary font-semibold mb-3">
             Product Inquiry
           </h3>
           <p class="text-on-surface-variant text-sm leading-relaxed font-body">
@@ -444,7 +461,7 @@ const previews = [
             size="text-[48px]"
             class="text-secondary mb-6 block group-hover:scale-110 transition-transform duration-300"
           />
-          <h3 class="font-headline text-xl text-primary font-bold mb-3">
+          <h3 class="font-headline text-xl text-primary font-semibold mb-3">
             Product Sourcing
           </h3>
           <p class="text-on-surface-variant text-sm leading-relaxed font-body">
@@ -468,7 +485,7 @@ const previews = [
             size="text-[48px]"
             class="text-secondary mb-6 block group-hover:scale-110 transition-transform duration-300"
           />
-          <h3 class="font-headline text-xl text-primary font-bold mb-3">
+          <h3 class="font-headline text-xl text-primary font-semibold mb-3">
             Export Handling
           </h3>
           <p class="text-on-surface-variant text-sm leading-relaxed font-body">
@@ -492,7 +509,7 @@ const previews = [
             size="text-[48px]"
             class="text-secondary mb-6 block group-hover:scale-110 transition-transform duration-300"
           />
-          <h3 class="font-headline text-xl text-primary font-bold mb-3">
+          <h3 class="font-headline text-xl text-primary font-semibold mb-3">
             Global Delivery
           </h3>
           <p class="text-on-surface-variant text-sm leading-relaxed font-body">
@@ -526,7 +543,7 @@ const previews = [
 
       <div class="relative z-10">
         <h2
-          class="font-display text-4xl md:text-5xl text-on-primary mb-8 font-bold"
+          class="font-display text-4xl md:text-5xl text-on-primary mb-8 font-semibold"
         >
           Ready to Partner with Indonesia's Best?
         </h2>

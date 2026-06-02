@@ -12,31 +12,62 @@ const categories = [
   {
     title: "Indonesian Spices",
     description:
-      "Premium quality white pepper, cinnamon, cloves, and more, sourced directly from best plantations.",
-    image:
-      "/images/asset_3.jpg",
+      "Premium quality white pepper, black pepper, coriander, and cloves, sourced directly from best plantations.",
+    image: "/images/products/Spices/spices_category.png",
     href: "/products#spices",
   },
   {
     title: "Raw Crackers",
     description:
-      "Authentic Indonesian crackers with various flavors including Prawn, Fish, and Cassava, ready for export.",
-    image:
-      "/images/asset_2.jpg",
+      "Authentic Indonesian crackers with various flavors including Prawn, Fish, and Onion, ready for export.",
+    image: "/images/products/Kerupuk/raw_crackers_category.png",
     href: "/products#crackers",
   },
   {
     title: "Vegetarian Food",
     description:
-      "Healthy plant-based snacks and ingredients made from natural Indonesian sources with modern process.",
-    image:
-      "/images/asset_4.jpg",
+      "Healthy plant-based instant noodles and roasted peanuts made from natural Indonesian sources with modern process.",
+    image: "/images/products/Vegetarian/vegetarian_noodle_category.png",
     href: "/products#vegetarian",
   },
 ];
+// FAQ Schema for AEO
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What products does PT Arisyafood Global Niaga export?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We export authentic Indonesian products including Raw Crackers (Kerupuk), Vegetarian Snacks, and Indonesian Powdered Spices.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Are Arisyafood products Halal certified?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, our products are Halal MUI Certified and BPOM Registered to ensure full compliance with international food safety standards.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Which countries do you export to?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We export to 8+ major markets globally including Southeast Asia, the Middle East, East Asia, Europe, and Australia & NZ.",
+      },
+    },
+  ],
+};
 ---
 
-<MainLayout>
+<MainLayout
+  title="PT Arisyafood Global Niaga | Premium Indonesian Export Company"
+  schemaData={[faqSchema]}
+>
   <!-- Grand Hero Section -->
   <section
     class="relative min-h-screen flex flex-col justify-center overflow-hidden parallax-wrapper w-full"
@@ -47,7 +78,7 @@ const categories = [
     <div
       class="max-w-container-max mx-auto px-grid-gutter pt-section-gap-mobile lg:pt-0 relative z-10 w-full"
     >
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-12">
         <!-- Left Hero Column -->
         <div class="reveal active">
           <Badge variant="primary-fixed">Established in Indonesia</Badge>
@@ -55,7 +86,9 @@ const categories = [
           <h1
             class="font-display text-display-lg text-primary mb-6 leading-tight"
           >
-            Your Trusted <span class="text-secondary">Export Partner</span> from Indonesia
+            Authentic Indonesian Taste For <span class="text-secondary"
+              >Global Markets</span
+            >
           </h1>
 
           <p class="text-body-lg text-on-surface-variant mb-10 max-w-xl">
@@ -64,12 +97,23 @@ const categories = [
             and professional logistics to the global market.
           </p>
 
-          <div class="flex flex-wrap gap-4">
-            <Button href="/products" variant="primary" class="gap-2">
-              Explore Products
-              <Icon name="arrow_forward" size="text-[18px]" />
+          <div class="flex flex-wrap gap-4 font-label">
+            <Button
+              href="/products"
+              variant="primary"
+              class="px-8 py-4 shadow-xl hover:shadow-2xl"
+              aria-label="Explore our product catalog"
+            >
+              Explore Catalog
             </Button>
-            <Button href="/contact" variant="outline"> Contact Us </Button>
+            <Button
+              href="/contact"
+              variant="outline"
+              class="px-8 py-4 bg-surface text-primary border-primary hover:bg-primary-container"
+              aria-label="Contact our sales team"
+            >
+              Contact Sales
+            </Button>
           </div>
 
           <!-- Trust Stats Row -->
@@ -102,10 +146,12 @@ const categories = [
           >
           </div>
 
-          <img fetchpriority="high" decoding="sync"
+          <img
+            fetchpriority="high"
+            decoding="sync"
             class="w-full h-auto object-cover rounded-xl shadow-2xl"
             alt="A premium, high-resolution lifestyle photograph showcasing a variety of traditional Indonesian spices and raw crackers arranged elegantly on a clean white surface."
-            src="/images/asset_5.jpg"
+            src="/images/products/hero_spices_crackers.png"
           />
 
           <!-- Floating Safe Food Certification Badge -->
@@ -145,59 +191,63 @@ const categories = [
       <div
         class="grid grid-cols-1 lg:grid-cols-12 gap-grid-gutter items-center"
       >
-        <!-- Left Image Grid -->
-        <div class="lg:col-span-5 reveal">
-          <img loading="lazy" decoding="async"
-            class="w-full h-[500px] object-cover rounded-lg shadow-lg"
-            alt="A wide panoramic shot of a vast, emerald-green Indonesian spice plantation."
-            src="/images/asset_15.jpg"
+        <!-- Left Image Section -->
+        <div
+          class="lg:col-span-5 reveal flex items-center justify-center p-8 bg-surface-container rounded-2xl"
+        >
+          <img
+            loading="lazy"
+            decoding="async"
+            class="w-full max-w-sm h-auto object-contain drop-shadow-md hover:scale-105 transition-transform duration-500"
+            alt="PT Arisyafood Global Niaga Logo"
+            src="/images/logo.png"
           />
         </div>
 
         <!-- Right Info Column -->
         <div class="lg:col-span-7">
-          <div class="pl-0 lg:pl-12">
-            <h2 class="text-headline-lg font-bold text-primary mb-6 reveal">
-              Bridging the Best of Indonesia to the World
+          <div class="pl-0 lg:pl-12 mt-8 lg:mt-0">
+            <h2 class="text-headline-lg font-semibold text-primary mb-6 reveal">
+              Your Trusted Export Partner for Authentic Indonesian Products
             </h2>
             <p
-              class="text-body-lg text-on-surface-variant mb-8 reveal delay-100"
+              class="text-body-lg text-on-surface-variant mb-8 reveal delay-100 leading-relaxed"
             >
-              PT ARISYAFOOD GLOBAL NIAGA is an export trading company based in
-              Medan, Indonesia. We operate in the spices, crackers, and snacks
-              industry with high-quality and competitive prices for global
-              markets.
+              <strong>PT Arisyafood Global Niaga</strong> is an export trading company
+              based in Medan, Indonesia. We specialize in bringing the finest Indonesian
+              agricultural products—including premium spices, raw crackers, and vegetarian
+              snacks—to the global market with uncompromising quality.
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal delay-200">
-              <!-- Mission bullet -->
               <div class="flex items-start gap-4">
-                <Icon name="handshake" class="text-secondary mt-1" />
+                <Icon name="visibility" class="text-secondary mt-1" />
                 <div>
-                  <h4 class="text-headline-md font-bold text-primary mb-2">
-                    Our Mission
+                  <h4 class="text-headline-md font-semibold text-primary mb-2">
+                    Our Vision
                   </h4>
                   <p
                     class="text-body-md text-on-surface-variant leading-relaxed"
                   >
-                    To be the most reliable and sustainable export partner by
-                    prioritizing quality and customer satisfaction.
+                    To be Indonesia's most trusted export partner, recognized
+                    globally for quality, consistency, and the richness of
+                    Indonesian culinary heritage.
                   </p>
                 </div>
               </div>
 
-              <!-- Sustainability bullet -->
               <div class="flex items-start gap-4">
-                <Icon name="eco" class="text-secondary mt-1" />
+                <Icon name="verified" class="text-secondary mt-1" />
                 <div>
-                  <h4 class="text-headline-md font-bold text-primary mb-2">
-                    Sustainability
+                  <h4 class="text-headline-md font-semibold text-primary mb-2">
+                    Quality Assured
                   </h4>
                   <p
                     class="text-body-md text-on-surface-variant leading-relaxed"
                   >
-                    Working closely with selected manufacturers and local
-                    farmers to ensure ethical and safe food supply.
+                    Zero compromise on product quality. We ensure all our
+                    products meet strict international certification standards
+                    and food safety compliance.
                   </p>
                 </div>
               </div>
@@ -212,7 +262,7 @@ const categories = [
   <section class="py-section-gap-desktop bg-surface" id="products">
     <div class="max-w-container-max mx-auto px-grid-gutter text-center mb-16">
       <span
-        class="text-secondary text-label-md font-bold tracking-widest uppercase reveal"
+        class="text-secondary text-label-md font-semibold tracking-widest uppercase reveal"
         >Our Core Portfolio</span
       >
       <h2
@@ -234,7 +284,9 @@ const categories = [
           >
             <div class="relative overflow-hidden rounded-xl bg-white border border-outline-variant hover:border-secondary hover:shadow-lg transition-all h-full flex flex-col">
               <div class="aspect-[4/3] overflow-hidden">
-                <img loading="lazy" decoding="async"
+                <img
+                  loading="lazy"
+                  decoding="async"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   src={cat.image}
                   alt={cat.title}
@@ -242,7 +294,7 @@ const categories = [
               </div>
               <div class="p-8 flex-grow flex flex-col justify-between">
                 <div>
-                  <h3 class="text-headline-lg font-bold text-primary mb-4">
+                  <h3 class="text-headline-lg font-semibold text-primary mb-4">
                     {cat.title}
                   </h3>
                   <p class="text-body-md text-on-surface-variant mb-6 leading-relaxed">
@@ -250,7 +302,7 @@ const categories = [
                   </p>
                 </div>
                 <a
-                  class="inline-flex items-center gap-2 text-secondary font-bold hover:gap-4 transition-all"
+                  class="inline-flex items-center gap-2 text-secondary font-semibold hover:gap-4 transition-all"
                   href={cat.href}
                 >
                   VIEW DETAILS

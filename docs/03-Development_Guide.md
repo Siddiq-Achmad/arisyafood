@@ -51,7 +51,14 @@ Untuk menghadirkan pengalaman pengguna ala aplikasi modern bergaya *enterprise*,
 Platform ini mengimplementasikan AEO/SEO teknis kelas tinggi.
 1. Setiap halaman di dalam `src/pages/` **WAJIB** menyisipkan atribut `title` dan `description` melalui props ke `<MainLayout>`.
 2. Komponen `src/components/molecules/SEO.astro` secara otomatis meng- *generate* metatag `OpenGraph` (untuk *preview* WhatsApp/LinkedIn) dan `Twitter Cards`.
-3. Komponen ini juga menyuntikkan skrip tipe `application/ld+json` (Schema.org) untuk struktur data `Organization`, memudahkan Google mengidentifikasi *PT Arisyafood Global Niaga* sebagai korporasi manufaktur resmi.
+3. Komponen ini dirancang untuk menerima properti `schemaData` berupa array objek JSON. Anda dapat menyuntikkan berbagai skema dinamis (seperti `WebSite`, `FAQPage`, `AboutPage`, `ItemList`, dan `ContactPage`) langsung dari halaman masing-masing untuk memudahkan mesin pencari (Google) dan mesin penjawab AI (Answer Engine) mengidentifikasi struktur data *PT Arisyafood Global Niaga*.
+
+## Aksesibilitas (A11y / WCAG)
+
+Dalam pengembangan atau penambahan fitur, pastikan antarmuka memenuhi standar aksesibilitas:
+- **ARIA Roles**: Gunakan peran ARIA yang tepat (seperti `role="tablist"`, `role="tab"`, dan `role="tabpanel"`) pada elemen interaktif seperti kategori produk.
+- **Form Labels**: Pastikan setiap tag `<label>` terhubung secara eksplisit ke elemen input (menggunakan atribut `for` dan `id`). Untuk *checkbox* atau *radio button*, kelompokkan menggunakan `<fieldset>` dan `<legend>`.
+- **Atribut Gambar**: Setiap elemen `<img/>` harus memiliki atribut `alt` yang deskriptif untuk *screen reader*. Gambar pahlawan (*Hero*) harus dilengkapi dengan `fetchpriority="high"`.
 
 > [!WARNING]
 > Jika Anda menambah halaman navigasi baru (misal: `/cabang-baru`), pastikan untuk menjalakan `npm run build` setelahnya agar sitemap (`sitemap-index.xml`) otomatis diperbarui oleh integrasi `@astrojs/sitemap`.

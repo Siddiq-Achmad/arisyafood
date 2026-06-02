@@ -1,121 +1,192 @@
 ---
-import MainLayout from '../components/templates/MainLayout.astro';
-import ProductCard from '../components/molecules/ProductCard.astro';
-import Button from '../components/atoms/Button.astro';
-import Icon from '../components/atoms/Icon.astro';
+import MainLayout from "../components/templates/MainLayout.astro";
+import ProductCard from "../components/molecules/ProductCard.astro";
+import Button from "../components/atoms/Button.astro";
+import Icon from "../components/atoms/Icon.astro";
 
 // Raw crackers dataset
 const crackers = [
   {
-    title: "Shrimp Crackers (Kerupuk Udang)",
-    description: "Made with fresh wild-caught shrimp, delivering a rich savory taste and superior expansion when fried.",
-    image: "/images/asset_17.jpg",
-    tag: "Premium Export Grade",
-    specs: ["Halal", "Non-GMO", "No Preservatives"]
+    title: "Raw Prawn Crackers (Kerupuk Udang)",
+    description:
+      "Authentic Indonesian prawn crackers crafted from premium wild-caught shrimp blended with high-quality tapioca flour. Crispy, light, and packed with natural seafood umami.",
+    image: "/images/products/Kerupuk/3D 3.png",
+    tag: "Min. Order: 20 Carton",
+    specs: ["FOB Belawan", "HS: 1901.90.99"],
   },
   {
-    title: "Onion Crackers (Kerupuk Bawang)",
-    description: "Light and aromatic crackers seasoned with premium Indonesian garlic and shallots for a crisp, clean finish.",
-    image: "/images/asset_18.jpg",
-    tag: "Vegetarian Friendly",
-    specs: ["BPOM Registered", "Vegetarian"]
+    title: "Raw Onion Crackers (Kerupuk Bawang)",
+    description:
+      "Traditional Indonesian crispy crackers made from selected ingredients and premium Onion seasoning. Savory flavor and authentic taste.",
+    image: "/images/products/Kerupuk/3D 3.png",
+    tag: "Min. Order: 20 Carton",
+    specs: ["FOB Belawan", "HS: 1901.90.99"],
   },
   {
-    title: "Ceriping (Cassava Crackers)",
-    description: "Slices of premium highland cassava, sun-dried and seasoned with a blend of traditional Indonesian spices.",
-    image: "/images/asset_19.jpg",
-    tag: "Traditional Specialty",
-    specs: ["Gluten-Free", "All Natural"]
-  }
+    title: "Raw Fish Crackers (Kerupuk Ikan)",
+    description:
+      "Authentic savory taste and crispy texture, made from selected fish and high-quality ingredients. Hygienically processed to meet export standards.",
+    image: "/images/products/Kerupuk/3D 2(1).png",
+    tag: "Min. Order: 20 Carton",
+    specs: ["FOB Belawan", "HS: 1901.90.99"],
+  },
 ];
 
 // Vegetarian food dataset
 const vegetarians = [
   {
-    title: "Premium Tempeh Blocks",
-    description: "Vacuum-sealed, export-grade fermented soy cakes. Rich in protein and probiotic benefits with a firm, nutty texture.",
-    image: "/images/asset_20.jpg",
-    tag: "Premium Export Grade"
+    title: "Vegetarian Instan Noodle (Cup Version)",
+    description:
+      "Vegetarian Flavor Noodle (Plant-Based Food Product). Available flavors: Soup, Gulai, Soto, and Spicy Fried Noodles.",
+    image: "/images/products/Vegetarian/vegetarian_noodle_category.png",
+    tag: "Min. Order: 30 Carton",
+    specs: ["FOB Belawan", "HS: 1902.30.40"],
   },
   {
-    title: "Mushroom Jerky (Dendeng Jamur)",
-    description: "Savory plant-based snacks made from premium locally-sourced mushrooms, seasoned with traditional Rendang spices.",
-    image: "/images/asset_21.jpg",
-    tag: "Premium Export Grade"
+    title: "Vegetarian Instan Noodle (Premium Pack)",
+    description:
+      "Vegetarian Flavor Noodle. Processed under hygienic standards, suitable for healthy diets. Flavors: Tomyum, Curry, Korean Spicy.",
+    image: "/images/products/Vegetarian/premium_vegetarian_noodle.png",
+    tag: "Min. Order: 20 Carton",
+    specs: ["FOB Belawan", "HS: 1902.30.40"],
   },
   {
-    title: "Vegetarian Instant Noodle",
-    description: "Premium ramen noodles served in a savory organic vegetable broth, topped with fresh bok choy, carrots, and shiitake mushrooms.",
-    image: "/images/products/vegetarians_noodle.png",
-    tag: "Organic Certified"
+    title: "Vegetarian Roasted Peanuts",
+    description:
+      "Premium Roasted Peanuts made from selected high-quality peanuts with a crunchy texture and rich roasted flavor. Vegetarian-friendly.",
+    image: "/images/products/Vegetarian/roasted_peanuts.png",
+    tag: "Min. Order: 30 Carton",
+    specs: ["FOB Belawan", "HS: 2008.11.10"],
   },
-  {
-    title: "Vege Raw Crackers",
-    description: "Sun-dried raw crackers made from premium spinach, beetroot, and pumpkin purees. Explodes with natural flavor when fried.",
-    image: "/images/products/vegetarians_crackers.png",
-    tag: "All Natural"
-  },
-  {
-    title: "Vege Crispy Roasted Peanuts",
-    description: "High-grade crunchy roasted peanuts coated with a special blend of traditional garlic and sweet lime leaf spices.",
-    image: "/images/products/vegetarians_peanuts.png",
-    tag: "High Protein"
-  }
 ];
 
 // Spices dataset
 const spices = [
   {
     title: "White Pepper Powder",
-    grade: "Muntok Grade A",
-    image: "/images/asset_22.jpg"
+    grade: "100% Bangka Pepper",
+    image: "/images/products/Spices/220668.png",
   },
   {
-    title: "Turmeric Powder",
-    grade: "High Curcumin Content",
-    image: "/images/asset_23.jpg"
+    title: "Black Pepper Powder",
+    grade: "100% Selected Black Pepper",
+    image: "/images/products/Spices/219606.png",
   },
   {
     title: "Coriander Powder",
-    grade: "Super Aromatic",
-    image: "/images/asset_24.jpg"
+    grade: "100% Selected Coriander Seeds",
+    image: "/images/products/Spices/220669.png",
   },
   {
-    title: "Red Chili Powder",
-    grade: "Heat Grade: Medium-Hot",
-    image: "/images/asset_25.jpg"
-  }
+    title: "Cloves Powder",
+    grade: "100% Selected Quality Cloves",
+    image: "/images/products/Spices/220781.png",
+  },
 ];
+
+// Product Catalog Schema for AEO
+const catalogSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  itemListElement: [
+    ...crackers.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "Product",
+        name: item.title,
+        description: item.description,
+        image: new URL(
+          item.image,
+          Astro.site || "https://arisyaglobal.com",
+        ).toString(),
+      },
+    })),
+    ...vegetarians.map((item, i) => ({
+      "@type": "ListItem",
+      position: crackers.length + i + 1,
+      item: {
+        "@type": "Product",
+        name: item.title,
+        description: item.description,
+        image: new URL(
+          item.image,
+          Astro.site || "https://arisyaglobal.com",
+        ).toString(),
+      },
+    })),
+    ...spices.map((item, i) => ({
+      "@type": "ListItem",
+      position: crackers.length + vegetarians.length + i + 1,
+      item: {
+        "@type": "Product",
+        name: item.title,
+        description: item.grade,
+        image: new URL(
+          item.image,
+          Astro.site || "https://arisyaglobal.com",
+        ).toString(),
+      },
+    })),
+  ],
+};
 ---
 
-<MainLayout title="Product Catalog | PT ARISYAFOOD GLOBAL NIAGA" description="Explore premium Indonesian exports: Raw Crackers, Vegetarian Food, and Nusantara Spices from PT ARISYAFOOD GLOBAL NIAGA.">
+<MainLayout
+  title="Product Catalog: Spices, Crackers & Vegetarian Food | PT Arisyafood Global Niaga"
+  description="Explore premium Indonesian exports: Raw Crackers, Vegetarian Food, and Nusantara Spices from PT ARISYAFOOD GLOBAL NIAGA."
+  schemaData={[catalogSchema]}
+>
   <!-- Page Header with Parallax -->
-  <section class="relative py-section-gap-desktop bg-surface-container-low border-b border-outline-variant overflow-hidden w-full">
-    <div class="max-w-container-max mx-auto px-grid-gutter text-center relative z-10 hero-parallax">
-      <h1 class="font-display text-4xl md:text-5xl lg:text-6xl text-primary mb-6 reveal-text">
+  <section
+    class="relative py-section-gap-desktop bg-surface-container-low border-b border-outline-variant overflow-hidden w-full"
+  >
+    <div
+      class="max-w-container-max mx-auto px-grid-gutter text-center relative z-10 hero-parallax"
+    >
+      <h1
+        class="font-display text-4xl md:text-5xl lg:text-6xl text-primary mb-6 reveal-text"
+      >
         Our Premium Product Catalog
       </h1>
-      <p class="max-w-2xl mx-auto text-lg text-on-surface-variant mb-12 font-body">
-        Bringing the authentic flavors and premium agricultural heritage of Indonesia to the global market. Each product is certified for international standards of quality and safety.
+      <p
+        class="max-w-2xl mx-auto text-lg text-on-surface-variant mb-12 font-body"
+      >
+        Bringing the authentic flavors and premium agricultural heritage of
+        Indonesia to the global market. Each product is certified for
+        international standards of quality and safety.
       </p>
-      
+
       <!-- Category Tabs -->
-      <div class="flex flex-wrap justify-center gap-4 md:gap-8 border-b border-outline-variant font-headline">
-        <button 
-          class="px-6 py-4 text-lg md:text-xl transition-all border-b-4 border-transparent active-tab" 
+      <div
+        class="flex flex-wrap justify-center gap-4 md:gap-8 border-b border-outline-variant font-headline"
+        role="tablist"
+        aria-label="Product Categories"
+      >
+        <button
+          class="px-6 py-4 text-lg md:text-xl transition-all border-b-4 border-transparent active-tab"
           id="tab-crackers"
+          role="tab"
+          aria-selected="true"
+          aria-controls="content-crackers"
         >
           Raw Crackers (Kerupuk)
         </button>
-        <button 
-          class="px-6 py-4 text-lg md:text-xl transition-all border-b-4 border-transparent text-on-surface-variant hover:text-primary" 
+        <button
+          class="px-6 py-4 text-lg md:text-xl transition-all border-b-4 border-transparent text-on-surface-variant hover:text-primary"
           id="tab-vegetarian"
+          role="tab"
+          aria-selected="false"
+          aria-controls="content-vegetarian"
         >
           Vegetarian Food
         </button>
-        <button 
-          class="px-6 py-4 text-lg md:text-xl transition-all border-b-4 border-transparent text-on-surface-variant hover:text-primary" 
+        <button
+          class="px-6 py-4 text-lg md:text-xl transition-all border-b-4 border-transparent text-on-surface-variant hover:text-primary"
           id="tab-spices"
+          role="tab"
+          aria-selected="false"
+          aria-controls="content-spices"
         >
           Indonesian Spices
         </button>
@@ -126,95 +197,155 @@ const spices = [
   <!-- Product Grid Sections -->
   <section class="py-section-gap-desktop w-full">
     <div class="max-w-container-max mx-auto px-grid-gutter">
-      
       <!-- Category: Kerupuk -->
-      <div class="category-content" id="content-crackers">
+      <div
+        class="category-content"
+        id="content-crackers"
+        role="tabpanel"
+        aria-labelledby="tab-crackers"
+        tabindex="0"
+      >
         <div class="mb-12">
-          <h2 class="font-headline text-3xl text-primary mb-2 reveal-text">Kerupuk (Raw Crackers)</h2>
-          <p class="text-on-surface-variant text-base max-w-3xl font-body reveal-text delay-100">
-            Traditional Indonesian crackers made with the finest starch and natural flavors. Authentic recipes preserved for generations, optimized for long-term export storage.
+          <h2 class="font-headline text-3xl text-primary mb-2 reveal-text">
+            Kerupuk (Raw Crackers)
+          </h2>
+          <p
+            class="text-on-surface-variant text-base max-w-3xl font-body reveal-text delay-100"
+          >
+            Traditional Indonesian crackers made with the finest starch and
+            natural flavors. Authentic recipes preserved for generations,
+            optimized for long-term export storage.
           </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-grid-gutter">
-          {crackers.map(product => (
-            <ProductCard
-              title={product.title}
-              description={product.description}
-              image={product.image}
-              tag={product.tag}
-              specs={product.specs}
-            />
-          ))}
+          {
+            crackers.map((product) => (
+              <ProductCard
+                title={product.title}
+                description={product.description}
+                image={product.image}
+                tag={product.tag}
+                specs={product.specs}
+              />
+            ))
+          }
         </div>
       </div>
-      
+
       <!-- Category: Vegetarian (Hidden by default) -->
-      <div class="category-content hidden animate-fade" id="content-vegetarian">
+      <div
+        class="category-content hidden animate-fade"
+        id="content-vegetarian"
+        role="tabpanel"
+        aria-labelledby="tab-vegetarian"
+        tabindex="0"
+      >
         <div class="mb-12">
-          <h2 class="font-headline text-3xl text-primary mb-2 reveal-text">Makanan Vegetarian (Vegetarian Food)</h2>
-          <p class="text-on-surface-variant text-base max-w-3xl font-body reveal-text delay-100">
-            Plant-based excellence from the heart of Indonesia. Our vegetarian selection focuses on high-protein, natural ingredients that cater to the modern conscious consumer.
+          <h2 class="font-headline text-3xl text-primary mb-2 reveal-text">
+            Makanan Vegetarian (Vegetarian Food)
+          </h2>
+          <p
+            class="text-on-surface-variant text-base max-w-3xl font-body reveal-text delay-100"
+          >
+            Plant-based excellence from the heart of Indonesia. Our vegetarian
+            selection focuses on high-protein, natural ingredients that cater to
+            the modern conscious consumer.
           </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-grid-gutter">
-          {vegetarians.map(product => (
-            <ProductCard
-              title={product.title}
-              description={product.description}
-              image={product.image}
-              tag={product.tag}
-              horizontal={true}
-              enquireText="Inquire Wholesale"
-            />
-          ))}
+          {
+            vegetarians.map((product) => (
+              <ProductCard
+                title={product.title}
+                description={product.description}
+                image={product.image}
+                tag={product.tag}
+                horizontal={true}
+                enquireText="Inquire Wholesale"
+              />
+            ))
+          }
         </div>
       </div>
-      
+
       <!-- Category: Spices (Hidden by default) -->
-      <div class="category-content hidden animate-fade" id="content-spices">
+      <div
+        class="category-content hidden animate-fade"
+        id="content-spices"
+        role="tabpanel"
+        aria-labelledby="tab-spices"
+        tabindex="0"
+      >
         <div class="mb-12">
-          <h2 class="font-headline text-3xl text-primary mb-2 reveal-text">Bumbu Bubuk Nusantara (Indonesian Spices)</h2>
-          <p class="text-on-surface-variant text-base max-w-3xl font-body reveal-text delay-100">
-            The essence of Indonesian cuisine in powdered form. Sourced directly from local farmers and processed using state-of-the-art drying technology to preserve essential oils and aroma.
+          <h2 class="font-headline text-3xl text-primary mb-2 reveal-text">
+            Bumbu Bubuk Nusantara (Indonesian Spices)
+          </h2>
+          <p
+            class="text-on-surface-variant text-base max-w-3xl font-body reveal-text delay-100"
+          >
+            The essence of Indonesian cuisine in powdered form. Sourced directly
+            from local farmers and processed using state-of-the-art drying
+            technology to preserve essential oils and aroma.
           </p>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-grid-gutter">
-          {spices.map(spice => (
-            <div class="group cursor-pointer">
-              <div class="relative aspect-square rounded-full border-2 border-outline-variant overflow-hidden p-2 group-hover:border-primary transition-colors duration-300">
-                <img loading="lazy" decoding="async" 
-                  class="w-full h-full object-cover rounded-full" 
-                  src={spice.image} 
-                  alt={spice.title} 
-                />
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-grid-gutter"
+        >
+          {
+            spices.map((spice) => (
+              <div class="group cursor-pointer">
+                <div class="relative aspect-square rounded-full border-2 border-outline-variant overflow-hidden p-2 group-hover:border-primary transition-colors duration-300">
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    class="w-full h-full object-cover rounded-full"
+                    src={spice.image}
+                    alt={spice.title}
+                  />
+                </div>
+                <div class="text-center mt-6">
+                  <h4 class="font-headline text-xl text-primary">
+                    {spice.title}
+                  </h4>
+                  <p class="text-secondary text-sm font-bold mt-1 font-label">
+                    {spice.grade}
+                  </p>
+                  <button class="mt-4 text-primary font-bold hover:underline font-label">
+                    Full Specs →
+                  </button>
+                </div>
               </div>
-              <div class="text-center mt-6">
-                <h4 class="font-headline text-xl text-primary">{spice.title}</h4>
-                <p class="text-secondary text-sm font-bold mt-1 font-label">{spice.grade}</p>
-                <button class="mt-4 text-primary font-bold hover:underline font-label">
-                  Full Specs →
-                </button>
-              </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
-      
     </div>
   </section>
 
   <!-- CTA Section -->
   <section class="py-section-gap-desktop bg-primary text-on-primary w-full">
     <div class="max-w-container-max mx-auto px-grid-gutter text-center">
-      <h2 class="font-display text-4xl lg:text-5xl mb-8 reveal-text">Ready to Source from Indonesia?</h2>
+      <h2 class="font-display text-4xl lg:text-5xl mb-8 reveal-text">
+        Ready to Source from Indonesia?
+      </h2>
       <p class="text-lg opacity-80 max-w-2xl mx-auto mb-12 font-body">
-        Whether you're looking for white-label manufacturing or bulk raw materials, our team is ready to provide you with the highest quality service and products.
+        Whether you're looking for white-label manufacturing or bulk raw
+        materials, our team is ready to provide you with the highest quality
+        service and products.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-6 font-label">
-        <Button href="/contact" variant="secondary" class="px-10 py-4">
+        <Button
+          href="/contact"
+          variant="secondary"
+          class="px-10 py-4 rounded-2xl"
+        >
           Request Full Catalog
         </Button>
-        <Button href="/contact" variant="outline" class="border-on-primary text-on-primary hover:bg-on-primary hover:text-primary">
+        <Button
+          href="/contact"
+          variant="outline"
+          class="border-white border-2 text-white hover:bg-white hover:text-primary rounded-2xl"
+        >
           Contact Sales Team
         </Button>
       </div>
@@ -224,25 +355,61 @@ const spices = [
   <!-- Trust Row -->
   <section class="py-16 border-b border-outline-variant bg-surface w-full">
     <div class="max-w-container-max mx-auto px-grid-gutter">
-      <p class="text-center text-sm font-bold text-on-surface-variant mb-8 uppercase tracking-widest font-label">
+      <p
+        class="text-center text-sm font-bold text-on-surface-variant mb-8 uppercase tracking-widest font-label"
+      >
         Certified Excellence
       </p>
-      <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-60">
-        <div class="flex flex-col items-center hover:opacity-100 transition-opacity duration-300">
-          <Icon name="verified_user" size="text-[36px]" class="mb-2 text-primary" />
-          <span class="text-[10px] font-bold uppercase tracking-widest font-label">HALAL MUI</span>
+      <div
+        class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-60"
+      >
+        <div
+          class="flex flex-col items-center hover:opacity-100 transition-opacity duration-300"
+        >
+          <Icon
+            name="verified_user"
+            size="text-[36px]"
+            class="mb-2 text-primary"
+          />
+          <span
+            class="text-[10px] font-bold uppercase tracking-widest font-label"
+            >HALAL MUI</span
+          >
         </div>
-        <div class="flex flex-col items-center hover:opacity-100 transition-opacity duration-300">
-          <Icon name="health_and_safety" size="text-[36px]" class="mb-2 text-primary" />
-          <span class="text-[10px] font-bold uppercase tracking-widest font-label">BPOM Registered</span>
+        <div
+          class="flex flex-col items-center hover:opacity-100 transition-opacity duration-300"
+        >
+          <Icon
+            name="health_and_safety"
+            size="text-[36px]"
+            class="mb-2 text-primary"
+          />
+          <span
+            class="text-[10px] font-bold uppercase tracking-widest font-label"
+            >BPOM Registered</span
+          >
         </div>
-        <div class="flex flex-col items-center hover:opacity-100 transition-opacity duration-300">
-          <Icon name="new_releases" size="text-[36px]" class="mb-2 text-primary" />
-          <span class="text-[10px] font-bold uppercase tracking-widest font-label">Export License</span>
+        <div
+          class="flex flex-col items-center hover:opacity-100 transition-opacity duration-300"
+        >
+          <Icon
+            name="new_releases"
+            size="text-[36px]"
+            class="mb-2 text-primary"
+          />
+          <span
+            class="text-[10px] font-bold uppercase tracking-widest font-label"
+            >Export License</span
+          >
         </div>
-        <div class="flex flex-col items-center hover:opacity-100 transition-opacity duration-300">
+        <div
+          class="flex flex-col items-center hover:opacity-100 transition-opacity duration-300"
+        >
           <Icon name="factory" size="text-[36px]" class="mb-2 text-primary" />
-          <span class="text-[10px] font-bold uppercase tracking-widest font-label">Health Certificate</span>
+          <span
+            class="text-[10px] font-bold uppercase tracking-widest font-label"
+            >Health Certificate</span
+          >
         </div>
       </div>
     </div>
@@ -255,12 +422,14 @@ const spices = [
     font-weight: 700;
     border-bottom-color: #012d1d;
   }
-  
+
   .reveal-text {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transition:
+      opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .reveal-text.visible {
@@ -281,7 +450,9 @@ const spices = [
   .fade-enter-active {
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease;
   }
 </style>
 
@@ -289,74 +460,81 @@ const spices = [
   // Intersection Observer for Reveal Animations
   const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: "0px 0px -50px 0px",
   };
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        entry.target.classList.add("visible");
       }
     });
   }, observerOptions);
 
   const initReveal = () => {
-    document.querySelectorAll('.reveal-text').forEach(el => observer.observe(el));
+    document
+      .querySelectorAll(".reveal-text")
+      .forEach((el) => observer.observe(el));
   };
 
   // Parallax Effect scroll listener
-  window.addEventListener('scroll', () => {
-    document.documentElement.style.setProperty('--scroll', window.pageYOffset.toString());
+  window.addEventListener("scroll", () => {
+    document.documentElement.style.setProperty(
+      "--scroll",
+      window.pageYOffset.toString(),
+    );
   });
 
   // Tab switching logic
-  const tabs = ['crackers', 'vegetarian', 'spices'];
-  
+  const tabs = ["crackers", "vegetarian", "spices"];
+
   const switchTab = (categoryId: string) => {
-    tabs.forEach(tab => {
+    tabs.forEach((tab) => {
       const btn = document.getElementById(`tab-${tab}`);
       if (btn) {
         if (tab === categoryId) {
-          btn.classList.add('active-tab');
-          btn.classList.remove('text-on-surface-variant');
+          btn.classList.add("active-tab");
+          btn.classList.remove("text-on-surface-variant");
+          btn.setAttribute("aria-selected", "true");
         } else {
-          btn.classList.remove('active-tab');
-          btn.classList.add('text-on-surface-variant');
+          btn.classList.remove("active-tab");
+          btn.classList.add("text-on-surface-variant");
+          btn.setAttribute("aria-selected", "false");
         }
       }
     });
 
-    const contents = document.querySelectorAll('.category-content');
-    contents.forEach(content => {
+    const contents = document.querySelectorAll(".category-content");
+    contents.forEach((content) => {
       const element = content as HTMLElement;
       if (element.id === `content-${categoryId}`) {
-        element.classList.remove('hidden');
-        element.classList.add('fade-enter');
-        
+        element.classList.remove("hidden");
+        element.classList.add("fade-enter");
+
         // Re-trigger reveal animations for new content
-        const reveals = element.querySelectorAll('.reveal-text');
-        reveals.forEach(r => r.classList.remove('visible'));
-        
+        const reveals = element.querySelectorAll(".reveal-text");
+        reveals.forEach((r) => r.classList.remove("visible"));
+
         setTimeout(() => {
-          element.classList.add('fade-enter-active');
-          reveals.forEach(r => observer.observe(r));
+          element.classList.add("fade-enter-active");
+          reveals.forEach((r) => observer.observe(r));
         }, 10);
       } else {
-        element.classList.add('hidden');
-        element.classList.remove('fade-enter', 'fade-enter-active');
+        element.classList.add("hidden");
+        element.classList.remove("fade-enter", "fade-enter-active");
       }
     });
   };
 
   // Wire up click event listeners to tab buttons
-  tabs.forEach(tab => {
+  tabs.forEach((tab) => {
     const btn = document.getElementById(`tab-${tab}`);
     if (btn) {
-      btn.addEventListener('click', () => switchTab(tab));
+      btn.addEventListener("click", () => switchTab(tab));
     }
   });
 
   // Init
   initReveal();
-  switchTab('crackers');
+  switchTab("crackers");
 </script>

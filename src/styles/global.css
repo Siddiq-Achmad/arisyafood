@@ -13,27 +13,27 @@
   --color-on-tertiary: #ffffff;
   --color-inverse-primary: #a5d0b9;
   --color-on-secondary-fixed: #271900;
-  --color-surface-bright: #f8f9fa;
+  --color-surface-bright: #F5F2EB;
   --color-on-primary: #ffffff;
-  --color-surface-tint: #3f6653;
+  --color-surface-tint: #0F3D2E;
   --color-on-secondary-container: #79580c;
-  --color-surface: #f8f9fa;
+  --color-surface: #F5F2EB;
   --color-secondary-container: #fed17c;
   --color-on-background: #191c1d;
   --color-on-secondary: #ffffff;
   --color-tertiary-fixed: #f9ddce;
   --color-on-tertiary-fixed-variant: #554338;
-  --color-secondary-fixed: #ffdea6;
-  --color-primary: #012d1d;
+  --color-secondary-fixed: #C89B3C;
+  --color-primary: #0F3D2E;
   --color-on-tertiary-container: #baa193;
   --color-tertiary-fixed-dim: #dcc1b2;
-  --color-background: #f8f9fa;
-  --color-secondary: #7a590d;
+  --color-background: #F5F2EB;
+  --color-secondary: #C89B3C;
   --color-primary-container: #1b4332;
   --color-outline: #717973;
   --color-inverse-on-surface: #f0f1f2;
   --color-on-error: #ffffff;
-  --color-secondary-fixed-dim: #ecc06d;
+  --color-secondary-fixed-dim: #C89B3C;
   --color-primary-fixed: #c1ecd4;
   --color-on-primary-fixed: #002114;
   --color-on-secondary-fixed-variant: #5d4200;
@@ -55,10 +55,10 @@
   --spacing-container-max: 1280px;
   --spacing-section-gap-desktop: 120px;
 
-  --font-headline: "Urbanist", sans-serif;
-  --font-display: "Urbanist", sans-serif;
-  --font-body: "Urbanist", sans-serif;
-  --font-label: "Urbanist", sans-serif;
+  --font-headline: "Montserrat", sans-serif;
+  --font-display: "Montserrat", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+  --font-label: "Open Sans", sans-serif;
 
   --font-size-body-md: 16px;
   --font-size-body-md--line-height: 1.6;
@@ -100,7 +100,7 @@
 
 
 body {
-  font-family: 'Urbanist', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .material-symbols-outlined {
@@ -119,7 +119,7 @@ body {
 }
 
 .bg-mesh {
-  background-color: #f8f9fa;
+  background-color: #F5F2EB;
   background-image: radial-gradient(at 0% 0%, hsla(158, 45%, 93%, 1) 0, transparent 50%),
     radial-gradient(at 50% 0%, hsla(41, 45%, 93%, 1) 0, transparent 50%);
 }

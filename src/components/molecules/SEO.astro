@@ -4,7 +4,7 @@ interface Props {
   description: string;
   canonicalURL?: string | URL;
   image?: string;
-  schemaData?: any;
+  schemaData?: any | any[];
 }
 
 const {
@@ -33,6 +33,18 @@ const baseSchema = {
     "https://www.linkedin.com/company/arisyafood",
     "https://www.instagram.com/arisyafood"
   ]
+};
+
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "PT ARISYAFOOD GLOBAL NIAGA",
+  "url": Astro.site?.toString() || "https://arisyaglobal.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": `${Astro.site?.toString() || "https://arisyaglobal.com"}search?q={search_term_string}`,
+    "query-input": "required name=search_term_string"
+  }
 };
 
 const localBusinessSchema = {
@@ -83,6 +95,9 @@ const localBusinessSchema = {
 <!-- JSON-LD Schemas -->
 <script type="application/ld+json" is:inline set:html={JSON.stringify(baseSchema)} />
 <script type="application/ld+json" is:inline set:html={JSON.stringify(localBusinessSchema)} />
+<script type="application/ld+json" is:inline set:html={JSON.stringify(webSiteSchema)} />
 {schemaData && (
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(schemaData)} />
+  Array.isArray(schemaData) 
+    ? schemaData.map(schema => <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />)
+    : <script type="application/ld+json" is:inline set:html={JSON.stringify(schemaData)} />
 )}

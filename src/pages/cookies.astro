@@ -3,11 +3,22 @@ import MainLayout from '../components/templates/MainLayout.astro';
 import Badge from '../components/atoms/Badge.astro';
 import Icon from '../components/atoms/Icon.astro';
 import Button from '../components/atoms/Button.astro';
+
+const schemaData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Cookie Policy | PT ARISYAFOOD GLOBAL NIAGA",
+    "description": "Learn about how we use cookies and similar technologies to improve your experience on our global B2B food export platform.",
+    "url": "https://www.arisyafood.com/cookies"
+  }
+];
 ---
 
 <MainLayout 
   title="Cookie Policy | PT ARISYAFOOD GLOBAL NIAGA" 
   description="Learn about how we use cookies and similar technologies to improve your experience on our global B2B food export platform."
+  schemaData={schemaData}
 >
   <!-- Hero Section -->
   <header class="parallax-wrapper relative h-[409px] min-h-[300px] flex items-center justify-center bg-primary">
@@ -119,10 +130,10 @@ import Button from '../components/atoms/Button.astro';
               You have the right to decide whether to accept or reject cookies. You can set your web browser controls to accept or refuse cookies. If you choose to reject cookies, you may still use our website though your access to some functionality and areas of our website may be restricted.
             </p>
             <div class="flex flex-wrap gap-4">
-              <Button variant="secondary" class="flex items-center gap-2" id="btn-customize">
+              <Button variant="secondary" class="flex items-center gap-2 rounded-2xl" id="btn-customize">
                 <Icon name="tune" /> Customize Cookies
               </Button>
-              <Button variant="outline" class="!border-white !text-white hover:!bg-white/10" id="btn-accept-all">
+              <Button variant="outline" class="!border-white !text-white hover:!bg-white/10 rounded-2xl" id="btn-accept-all">
                 Accept All Cookies
               </Button>
             </div>

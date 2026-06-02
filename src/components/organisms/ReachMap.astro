@@ -4,13 +4,11 @@ import Button from "../atoms/Button.astro";
 import Icon from "../atoms/Icon.astro";
 
 const markets = [
-  { country: "Malaysia", region: "Southeast Asia Reach" },
-  { country: "Singapore", region: "Strategic Logistics Hub" },
-  { country: "Japan", region: "Premium Quality Market" },
-  { country: "China", region: "Major Trade Partner" },
-  { country: "Middle East", region: "Growing B2B Hub" },
-  { country: "Europe", region: "Premium Quality Demands" },
-  { country: "Australia", region: "Direct Ocean Routes" },
+  { country: "Southeast Asia", region: "High Cultural Familiarity" },
+  { country: "Middle East", region: "100% Halal Requirement" },
+  { country: "Australia & NZ", region: "Strong Diaspora Demand" },
+  { country: "East Asia", region: "Premium Quality Market" },
+  { country: "Europe", region: "Growing Vegan Market" },
 ];
 ---
 
@@ -44,7 +42,9 @@ const markets = [
         </div>
 
         <Button
-          href="#"
+          href="/assets/Company Profile.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
           variant="secondary"
           class="flex items-center gap-2 px-8 py-4"
         >
@@ -68,39 +68,33 @@ const markets = [
           >
           </div>
 
-          <!-- Malaysia & Singapore -->
+          <!-- Southeast Asia -->
           <div
             class="absolute top-[42%] left-[73%] w-3 h-3 bg-secondary rounded-full animate-ping delay-100"
           >
           </div>
 
-          <!-- Japan -->
+          <!-- East Asia -->
           <div
-            class="absolute top-[17%] left-[83%] w-3 h-3 bg-secondary rounded-full animate-ping delay-300"
-          >
-          </div>
-
-          <!-- China -->
-          <div
-            class="absolute top-[22%] left-[75%] w-3 h-3 bg-secondary rounded-full animate-ping delay-500"
+            class="absolute top-[20%] left-[80%] w-3 h-3 bg-secondary rounded-full animate-ping delay-300"
           >
           </div>
 
           <!-- Middle East -->
           <div
-            class="absolute top-[27%] left-[59%] w-3 h-3 bg-secondary rounded-full animate-ping delay-700"
+            class="absolute top-[27%] left-[59%] w-3 h-3 bg-secondary rounded-full animate-ping delay-500"
           >
           </div>
 
           <!-- Europe -->
           <div
-            class="absolute top-[12%] left-[47%] w-3 h-3 bg-secondary rounded-full animate-ping delay-1000"
+            class="absolute top-[12%] left-[47%] w-3 h-3 bg-secondary rounded-full animate-ping delay-700"
           >
           </div>
 
-          <!-- Australia -->
+          <!-- Australia & NZ -->
           <div
-            class="absolute top-[62%] left-[82%] w-3 h-3 bg-secondary rounded-full animate-ping delay-200"
+            class="absolute top-[62%] left-[82%] w-3 h-3 bg-secondary rounded-full animate-ping delay-1000"
           >
           </div>
 

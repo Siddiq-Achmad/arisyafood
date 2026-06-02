@@ -4,36 +4,34 @@ import Icon from "../atoms/Icon.astro";
 
 const carouselProducts = [
   {
-    title: "Premium Shrimp Crackers",
-    subtitle: "Traditional recipe, export quality",
-    image: "/images/asset_2.jpg",
+    title: "Raw Prawn Crackers",
+    subtitle: "Authentic wild-caught shrimp, export quality",
+    image: "/images/products/Kerupuk/raw_crackers_category.png",
   },
   {
-    title: "Organic White Pepper",
-    subtitle: "From Bangka Belitung regions",
-    image: "/images/asset_3.jpg",
+    title: "White Pepper Powder",
+    subtitle: "100% pure from Bangka plantations",
+    image: "/images/products/Spices/spices_category.png",
   },
   {
-    title: "Spiced Cassava Chips",
-    subtitle: "Natural ingredients, no preservatives",
-    image: "/images/asset_4.jpg",
+    title: "Raw Onion Crackers",
+    subtitle: "A classic savory snack with a satisfying crunch",
+    image: "/images/products/Kerupuk/onion_crackers.png",
   },
   {
-    title: "Traditional Fish Crackers",
+    title: "Vegetarian Instant Noodle",
+    subtitle: "Plant-based, modern hygienic process",
+    image: "/images/products/Vegetarian/premium_vegetarian_noodle.png",
+  },
+  {
+    title: "Raw Fish Crackers",
     subtitle: "Authentic Indonesian ocean taste",
-    image: "/images/asset_5.jpg",
+    image: "/images/products/Kerupuk/fish_crackers.png",
   },
   {
-    title: "Onion Crackers",
-    subtitle:
-      "A classic savory snack with a mild onion flavor and satisfying crunch",
-    image: "/images/asset_18.jpg",
-  },
-  {
-    title: "Crispy Roasted Peanuts",
-    subtitle:
-      "High-grade crunchy roasted peanuts coated with a special blend of traditional garlic and sweet lime leaf spices.",
-    image: "/images/products/vegetarians_peanuts.png",
+    title: "Vegetarian Roasted Peanuts",
+    subtitle: "High-grade crunchy roasted peanuts",
+    image: "/images/products/Vegetarian/roasted_peanuts.png",
   },
 ];
 
@@ -76,7 +74,7 @@ const seamlessProducts = [...carouselProducts, ...carouselProducts];
             subtitle={product.subtitle}
             image={product.image}
             enquireText=""
-            class="w-[calc(50%-12px)] md:w-[calc(25%-18px)] snap-start shrink-0"
+            class="w-full md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] snap-start shrink-0"
             ariaHidden={index >= carouselProducts.length}
           />
         ))

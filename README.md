@@ -147,6 +147,16 @@ Situs web ini menerapkan teknik interaksi modern untuk meningkatkan keterlibatan
 
 ---
 
+## 🔍 Optimasi AEO, SEO & Aksesibilitas (A11y)
+
+Proyek ini dilengkapi dengan fondasi optimasi penelusuran tingkat lanjut dan standar aksesibilitas inklusif:
+
+- **Rich Structured Data (JSON-LD):** Platform ini menginjeksi skema data terstruktur spesifik pada setiap halaman (seperti `WebSite` untuk beranda, `FAQPage` untuk pertanyaan umum, `ItemList` untuk katalog produk, dan `ContactPage` untuk info kontak). Hal ini memaksimalkan keterbacaan oleh Google Rich Results dan *Answer Engine* berbasis AI (Generative Engine Optimization).
+- **Kepatuhan WCAG (Web Content Accessibility Guidelines):** Formulir, tab kategori, dan navigasi situs didesain ramah pengguna tunanetra (*screen reader*) dengan pemanfaatan atribut ARIA (`aria-controls`, `aria-selected`, `role="tablist"`), label input eksplisit, dan struktur semantik HTML tingkat tinggi.
+- **Performa Gambar:** Komponen gambar utama (*Hero Images*) mengimplementasikan strategi `fetchpriority="high"` dan decoding asinkron untuk mempercepat **LCP (Largest Contentful Paint)**.
+
+---
+
 ## 📈 Rekomendasi Optimasi Masa Depan
 
 1. **Komponen `<Image />` Astro:** Disarankan menggunakan modul `astro:assets` untuk melakukan kompresi otomatis gambar ke format modern seperti `.webp` atau `.avif` demi mempercepat pemuatan halaman.

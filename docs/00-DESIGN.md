@@ -147,9 +147,9 @@ In this light-themed system, visual hierarchy is conveyed through **Tonal Layers
 
 The design system employs a **Rounded (2)** roundedness profile. This choice emphasizes a modern, friendly, and high-quality feel, softening the industrial aspects of the brand while remaining professional.
 
-*   **Primary Corners:** 8px (0.5rem) for standard components like tags, buttons, and inputs.
-*   **Large Components:** 16px (1rem) for product cards and featured imagery containers.
-*   **Buttons:** Standardized at 8px roundedness to provide a comfortable, tactile touch target.
+*   **Primary Corners:** 8px (0.5rem) untuk komponen standar seperti tag dan input form.
+*   **Large Components:** 16px (1rem) untuk kartu produk dan kontainer media visual.
+*   **Buttons:** Standardisasi gaya kelengkungan tingkat lanjut (`rounded-2xl`) untuk memberikan target ketukan (touch target) yang lebih lembut, organik, dan premium.
 
 ## Components
 

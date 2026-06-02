@@ -8,11 +8,13 @@ import "../../styles/global.css";
 interface Props {
   title?: string;
   description?: string;
+  schemaData?: any | any[];
 }
 
 const {
   title = "PT ARISYAFOOD GLOBAL NIAGA | Premium Indonesian Exports",
   description = "Establish a professional, high-fidelity digital presence to showcase Indonesian food heritage (crackers, spices, and vegetarian products) to an international market.",
+  schemaData
 } = Astro.props;
 ---
 
@@ -23,18 +25,18 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <!-- SEO Component -->
-    <SEO title={title} description={description} />
+    <SEO title={title} description={description} schemaData={schemaData} />
 
     <!-- Google Fonts Preload & Import -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap"
       as="style"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
