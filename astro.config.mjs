@@ -9,7 +9,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://arisyaglobal.com',
   integrations: [sitemap()],
-  outDir: './native',
+  outDir: './dist',
   build: {
     format: 'file'
   },

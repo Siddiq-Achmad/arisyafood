@@ -536,5 +536,20 @@ const catalogSchema = {
 
   // Init
   initReveal();
-  switchTab("crackers");
+  
+  // Check URL hash for specific category tab
+  const initialHash = window.location.hash.replace("#", "");
+  if (tabs.includes(initialHash)) {
+    switchTab(initialHash);
+    
+    // Smooth scroll to tabs section if needed
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }, 100);
+  } else {
+    switchTab("crackers");
+  }
 </script>
