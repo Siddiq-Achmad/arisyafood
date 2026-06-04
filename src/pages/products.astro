@@ -54,7 +54,7 @@ const vegetarians = [
     title: "Vegetarian Roasted Peanuts",
     description:
       "Premium Roasted Peanuts made from selected high-quality peanuts with a crunchy texture and rich roasted flavor. Vegetarian-friendly.",
-    image: "/images/products/Vegetarian/roasted_peanuts.png",
+    image: "/images/products/Vegetarian/roasted_peanuts_b2b.png",
     tag: "Min. Order: 30 Carton",
     specs: ["FOB Belawan", "HS: 2008.11.10"],
   },
@@ -261,7 +261,6 @@ const catalogSchema = {
                 image={product.image}
                 tag={product.tag}
                 horizontal={true}
-                enquireText="Inquire Wholesale"
               />
             ))
           }
@@ -310,9 +309,9 @@ const catalogSchema = {
                   <p class="text-secondary text-sm font-bold mt-1 font-label">
                     {spice.grade}
                   </p>
-                  <button class="mt-4 text-primary font-bold hover:underline font-label">
-                    Full Specs →
-                  </button>
+                  <Button variant="secondary" class="mt-6 mx-auto px-6 py-2">
+                    Enquire Now
+                  </Button>
                 </div>
               </div>
             ))
@@ -536,17 +535,17 @@ const catalogSchema = {
 
   // Init
   initReveal();
-  
+
   // Check URL hash for specific category tab
   const initialHash = window.location.hash.replace("#", "");
   if (tabs.includes(initialHash)) {
     switchTab(initialHash);
-    
+
     // Smooth scroll to tabs section if needed
     setTimeout(() => {
       window.scrollTo({
         top: 0,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }, 100);
   } else {
