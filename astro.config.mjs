@@ -11,7 +11,7 @@ export default defineConfig({
   integrations: [sitemap()],
   outDir: './dist',
   build: {
-    format: 'file'
+    format: 'directory'
   },
   vite: {
     plugins: [tailwindcss()]
